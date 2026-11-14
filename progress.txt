@@ -26,3 +26,4 @@
 14.11 - ProductCard storefront styling: hover lift+shadow, white contain-fit image with zoom+click-through link, discount % badge, pill badges, clamped title/desc, gold rating star, divided price footer; wider catalog grid gap
 14.11 - Cart page polish: structured item rows (contain-fit thumbs, clamped titles, pill stepper, hover remove), sticky rounded summary card with gradient checkout, header with item count badge
 14.11 - Added shared/ui/Breadcrumbs (nav landmark, chevron separators, active page) on Catalog/Cart/Favourites/SingleProduct/Contacts/Blog pages; replaced product page back-link
+14.11 - Deployed to GitHub: repo v-stolyarchuk/estatehome-frontend, vite base './', HashRouter, 404.html SPA fallback, GitHub Actions Pages workflow
