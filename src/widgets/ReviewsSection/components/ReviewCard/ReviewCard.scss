@@ -1,0 +1,21 @@
+@use '../../../../shared/styles/main' as *;
+
+.review-card {
+    /*** BASE ***/
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
+    background-color: $color-light;
+    border-radius: 0.5rem;
+
+    /*** ELEMENTS ***/
+
+    &__text {
+        flex: 1;
+        color: $color-dark;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+}

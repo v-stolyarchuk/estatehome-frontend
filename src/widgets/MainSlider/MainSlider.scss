@@ -1,0 +1,78 @@
+@use '../../shared/styles/main' as *;
+
+.main-slider {
+    /*** BASE ***/
+
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    /*** VIEWPORT & TRACK ***/
+
+    &__viewport {
+        overflow: hidden;
+    }
+
+    &__track {
+        display: flex;
+        transition: transform 0.4s ease;
+    }
+
+    &__slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+
+        /*** THEMES ***/
+
+        &--primary {
+            --slide-accent: #{$color-primary};
+
+            background-color: color-mix(in srgb, $color-primary 8%, $color-light);
+        }
+
+        &--info {
+            --slide-accent: #{$color-info};
+
+            background-color: color-mix(in srgb, $color-info 8%, $color-light);
+        }
+
+        &--success {
+            --slide-accent: #{$color-success};
+
+            background-color: color-mix(in srgb, $color-success 8%, $color-light);
+        }
+    }
+
+    /*** ARROWS ***/
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: 50%;
+        background-color: $color-light;
+        color: $color-dark;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 20%);
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        &--prev {
+            left: 0.75rem;
+        }
+
+        &--next {
+            right: 0.75rem;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@use '../../../../shared/styles/main' as *;
+
+.footer-bottom {
+    /*** BASE ***/
+
+    padding-top: 1.5rem;
+    border-top: 1px solid $color-secondary;
+
+    &__text {
+        font-size: 0.85rem;
+        color: $color-secondary;
+    }
+}

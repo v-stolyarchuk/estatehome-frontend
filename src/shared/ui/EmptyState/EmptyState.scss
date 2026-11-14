@@ -1,0 +1,31 @@
+@use '../../styles/main.scss' as *;
+
+.empty-state {
+    /*** BASE ***/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 3rem 1.5rem;
+    text-align: center;
+
+    /*** ELEMENTS ***/
+
+    &__icon {
+        font-size: 3rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $color-dark;
+    }
+
+    &__text {
+        color: $color-secondary;
+    }
+
+    &__action {
+        margin-top: 0.5rem;
+    }
+}

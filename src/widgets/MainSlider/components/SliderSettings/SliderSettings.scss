@@ -1,0 +1,35 @@
+@use '../../../../shared/styles/main' as *;
+
+.slider-settings {
+    /*** BASE ***/
+
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+
+    /*** DOT ***/
+
+    &__dot {
+        width: 0.625rem;
+        height: 0.625rem;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background-color: $color-secondary;
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        /*** MODIFIERS ***/
+
+        &--active {
+            background-color: $color-primary;
+        }
+    }
+}

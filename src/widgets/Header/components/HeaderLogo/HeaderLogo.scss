@@ -1,0 +1,38 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.header-logo {
+    /*** BASE ***/
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+
+    /*** ELEMENTS ***/
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        background: linear-gradient(135deg, $color-primary, $color-info);
+        border-radius: 0.6rem;
+        font-size: 1.15rem;
+        box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, $color-primary 35%, transparent);
+        transition: transform 0.2s ease;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $color-dark;
+        letter-spacing: -0.01em;
+    }
+
+    /*** STATES ***/
+
+    &:hover &__icon {
+        transform: scale(1.05);
+    }
+}

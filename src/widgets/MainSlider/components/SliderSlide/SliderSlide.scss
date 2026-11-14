@@ -1,0 +1,81 @@
+@use '../../../../shared/styles/main' as *;
+
+.slider-slide {
+    /*** BASE ***/
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-height: 340px;
+    padding: 2.5rem 2rem;
+
+    @include onDesktop {
+        min-height: 420px;
+        padding: 3rem 4rem;
+    }
+
+    /*** CONTENT ***/
+
+    &__content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        max-width: 560px;
+    }
+
+    &__badge {
+        display: inline-block;
+        padding: 0.3rem 0.85rem;
+        border-radius: 999px;
+        background-color: var(--slide-accent);
+        color: $color-light;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.2;
+        color: $color-dark;
+
+        @include onDesktop {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__text {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $color-secondary;
+    }
+
+    &__highlight {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--slide-accent);
+    }
+
+    /*** MEDIA ***/
+
+    &__media {
+        display: none;
+        flex: 0 0 42%;
+
+        @include onTablet {
+            display: block;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        object-fit: contain;
+        border-radius: 0.75rem;
+    }
+}

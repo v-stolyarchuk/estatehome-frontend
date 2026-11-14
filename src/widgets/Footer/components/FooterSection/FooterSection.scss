@@ -1,0 +1,30 @@
+@use '../../../../shared/styles/main' as *;
+
+.footer-section {
+    /*** BASE ***/
+
+    &__title {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        color: $color-light;
+    }
+
+    /*** LIST ***/
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__link {
+        color: $color-secondary;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-light;
+        }
+    }
+}

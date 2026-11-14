@@ -1,0 +1,58 @@
+@use '../../styles/main.scss' as *;
+
+.button {
+    /*** BASE ***/
+
+    display: inline-block;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover:not(:disabled) {
+        opacity: 0.85;
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    /*** SIZES ***/
+
+    &--md {
+        padding: 0.625rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    &--sm {
+        padding: 0.375rem 0.875rem;
+        font-size: 0.85rem;
+    }
+
+    /*** VARIANTS ***/
+
+    &--primary {
+        background-color: $color-primary;
+        color: $color-light;
+    }
+
+    &--secondary {
+        border: 1px solid $color-primary;
+        background-color: transparent;
+        color: $color-primary;
+    }
+
+    &--danger {
+        background-color: $color-danger;
+        color: $color-light;
+    }
+
+    &--success {
+        background-color: $color-success;
+        color: $color-light;
+    }
+}

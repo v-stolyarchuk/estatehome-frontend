@@ -1,0 +1,28 @@
+14.11 - Added structure.txt and progress.txt files, created files structure before ReviewsSection widget
+14.11 - Created features, entities and shared folders with files according to structure.txt
+14.11 - Added react-router-dom, created Layout with per-route page titles, routes config and placeholder page components
+14.11 - Created AGENTS.md with general, structure, SCSS and progress-logging rules
+14.11 - Replaced empty contact entity with partner entity (types, data, barrel) for partner companies with websites, services and referral discounts
+14.11 - Persisted cart items to localStorage on quantity/remove changes and added in-cart quantity/remove panel to ProductCard
+14.11 - Added 3 sample blog posts with hero header and responsive card grid styles to BlogPage
+14.11 - Built ContactsPage with hero, contact cards (phone/email/address/hours), social links and OpenStreetMap embed
+14.11 - Implemented favourites slice with localStorage persistence, heart toggle on ProductCard, and FavouritesPage with product grid and empty state
+14.11 - Added search query filter input to CatalogPage with empty state
+14.11 - Added toggleable category filter grid to CatalogPage, combined with search query
+14.11 - Extracted ProductCartPanel (features/cart) and CatalogFilters (features/catalog) from ProductCard and CatalogPage
+14.11 - Added shared/ui primitives (Button, Input, Badge, PageHero, EmptyState) and applied them across pages, widgets and feature components
+14.11 - Restructured features/catalog per structure.txt: model/useCatalog hook, filters/ FilterSearch+CategoriesFilter+FilterSortBy, navigation/CategoriesNav, ui/CatalogResults
+14.11 - Renamed features/catalog/ui/CatalogResults to CatalogList
+14.11 - Filled all empty folders: category/review entities, favourites ui, shared Icon/Loader/Modal/Slider, Footer/MainSlider/ReviewsSection widgets
+14.11 - Tooling & architecture hardening: consolidated eslint.config.js with all plugins + layer-boundary rules, added prettier/stylelint/editorconfig configs and npm scripts (lint:fix, lint:scss, format, verify), moved typed Redux hooks to app/hooks, made ProductCard presentational and added features/product-card ConnectedProductCard, expanded AGENTS.md rules, added .devin skills scaffold-component and new-feature, removed instructions.txt and eslint.config.ts
+14.11 - Migrated catalog to new Product model: 12 Ukrainian products with slug/sku/images/availability/attributes/badges/rating, CategorySlug+labels in entities/category, SingleProductPage with gallery+specs, string IDs across cart/favourites, UAH pricing, v2 storage keys
+14.11 - Added .devin/skills/project-review: read-only subagent audit for empty folders, orphaned components, layer violations, stale docs, and verify failures after large tasks
+14.11 - Ukrainian product display: centralized PRODUCT_BADGE/AVAILABILITY_LABELS in entities/product, pluralize() helper for review counts, translated product card/page/cart action strings
+14.11 - Full-site Ukrainian localization: translated header/footer nav, catalog filters+empty states, cart, favourites, blog posts, contacts (UA phone/address/Kyiv map), home features+CTA, main slider, reviews data, aria-labels; formatDate locale uk-UA; real categories+counts on HomePage
+14.11 - Rebuilt MainSlider store-style (image+badge+title+subtitle+highlight+CTA, per-slide accent themes) and mounted it on HomePage above PageHero
+14.11 - HomePage storefront styling: gradient PageHero (shared, glassy badge) + feature cards with icon chips/hovers, category cards with lift+arrow+accent underline titles, gradient CTA band
+14.11 - Catalog filter UX polish: pill category nav, checkbox-tile category filter, pill search/sort inputs with icons+focus rings, reset-filters button, styled catalog header
+14.11 - Header redesign: sticky light blur bar, gradient logo icon, pill segmented nav + pill action buttons, new MobileNav hamburger with animated X and dropdown panel (fixes missing mobile nav)
+14.11 - ProductCard storefront styling: hover lift+shadow, white contain-fit image with zoom+click-through link, discount % badge, pill badges, clamped title/desc, gold rating star, divided price footer; wider catalog grid gap
+14.11 - Cart page polish: structured item rows (contain-fit thumbs, clamped titles, pill stepper, hover remove), sticky rounded summary card with gradient checkout, header with item count badge
+14.11 - Added shared/ui/Breadcrumbs (nav landmark, chevron separators, active page) on Catalog/Cart/Favourites/SingleProduct/Contacts/Blog pages; replaced product page back-link

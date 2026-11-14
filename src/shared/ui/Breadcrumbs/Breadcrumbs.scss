@@ -1,0 +1,52 @@
+@use '../../styles/main.scss' as *;
+
+.breadcrumbs {
+    /*** BASE ***/
+
+    margin-bottom: 1.25rem;
+
+    /*** ELEMENTS ***/
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    &__link {
+        color: $color-secondary;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: color 0.15s ease;
+
+        &:hover {
+            color: $color-primary;
+            text-decoration: underline;
+        }
+    }
+
+    &__current {
+        color: $color-secondary;
+        font-size: 0.85rem;
+
+        &--active {
+            color: $color-dark;
+            font-weight: 600;
+        }
+    }
+
+    &__separator {
+        color: rgb(0 0 0 / 25%);
+        font-size: 0.9rem;
+        line-height: 1;
+    }
+}

@@ -1,0 +1,26 @@
+@use '../../shared/styles/main.scss' as *;
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__header {
+        padding: 1rem 1.5rem;
+        background-color: $color-dark;
+        color: $color-light;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__main {
+        flex: 1;
+        padding: 1.5rem;
+
+        @include onDesktop {
+            padding: 2rem 3rem;
+        }
+    }
+}

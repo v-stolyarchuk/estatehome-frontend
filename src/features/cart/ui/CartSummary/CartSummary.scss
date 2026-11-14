@@ -1,0 +1,116 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.cart-summary {
+    /*** BASE ***/
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1.5rem;
+    background-color: $color-light;
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 6%);
+
+    @include onDesktop {
+        position: sticky;
+        top: 5.5rem;
+    }
+
+    /*** ELEMENTS ***/
+
+    &__title {
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgb(0 0 0 / 8%);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $color-dark;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+
+        /*** MODIFIERS ***/
+
+        &--total {
+            padding-top: 0.75rem;
+            border-top: 1px solid rgb(0 0 0 / 8%);
+            font-size: 1.15rem;
+            font-weight: 700;
+
+            .cart-summary__value {
+                color: $color-primary;
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    &__label {
+        color: $color-secondary;
+    }
+
+    &__value {
+        color: $color-dark;
+        font-weight: 600;
+    }
+
+    &__checkout {
+        padding: 0.85rem;
+        border: none;
+        border-radius: 999px;
+        background: linear-gradient(135deg, $color-success, #1e7e34);
+        color: $color-light;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 0.4rem 1rem color-mix(in srgb, $color-success 35%, transparent);
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0.6rem 1.25rem color-mix(in srgb, $color-success 45%, transparent);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &__clear {
+        padding: 0.55rem;
+        border: 1px solid rgb(0 0 0 / 12%);
+        border-radius: 999px;
+        background-color: transparent;
+        color: $color-secondary;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease,
+            background-color 0.2s ease;
+
+        &:hover {
+            border-color: $color-danger;
+            background-color: color-mix(in srgb, $color-danger 8%, transparent);
+            color: $color-danger;
+        }
+    }
+
+    &__continue {
+        text-align: center;
+        color: $color-primary;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

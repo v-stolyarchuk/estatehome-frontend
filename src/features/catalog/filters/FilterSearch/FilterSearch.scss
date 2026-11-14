@@ -1,0 +1,21 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.filter-search {
+    position: relative;
+    max-width: 480px;
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 0.9rem;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        opacity: 0.55;
+        pointer-events: none;
+    }
+
+    .input {
+        padding-left: 2.4rem;
+        border-radius: 999px;
+    }
+}

@@ -1,0 +1,35 @@
+@use '../../shared/styles/main.scss' as *;
+
+.header {
+    /*** BASE ***/
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgb(255 255 255 / 85%);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 6%);
+
+    /*** ELEMENTS ***/
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.75rem 1.5rem;
+
+        @include onDesktop {
+            padding: 1rem 2rem;
+        }
+    }
+
+    &__actions-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}

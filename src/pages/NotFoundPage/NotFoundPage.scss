@@ -1,0 +1,9 @@
+@use '../../shared/styles/main.scss' as *;
+
+.page--not-found {
+    color: $color-danger;
+
+    a {
+        color: $color-primary;
+    }
+}

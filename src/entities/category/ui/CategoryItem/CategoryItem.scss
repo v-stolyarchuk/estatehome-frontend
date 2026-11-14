@@ -1,0 +1,35 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.category-item {
+    /*** BASE ***/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 1rem;
+    border: 1px solid $color-secondary;
+    border-radius: 0.5rem;
+    background-color: $color-light;
+    font: inherit;
+    cursor: pointer;
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+
+    &:hover {
+        border-color: $color-primary;
+    }
+
+    /*** ELEMENTS ***/
+
+    &__name {
+        font-weight: 600;
+        color: $color-dark;
+    }
+
+    &__count {
+        font-size: 0.85rem;
+        color: $color-secondary;
+    }
+}

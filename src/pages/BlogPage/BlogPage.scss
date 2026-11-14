@@ -1,0 +1,82 @@
+@use '../../shared/styles/main.scss' as *;
+
+.blog-page {
+    /*** POSTS ***/
+
+    &__posts {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+        @include onTablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include onDesktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__post {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: $color-light;
+        border: 1px solid $color-secondary;
+        border-radius: 0.5rem;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+            border-color: $color-primary;
+        }
+    }
+
+    &__post-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 160px;
+        background-color: $color-dark;
+    }
+
+    &__post-icon {
+        font-size: 3rem;
+    }
+
+    &__post-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+        padding: 1.25rem;
+    }
+
+    &__post-tag {
+        align-self: flex-start;
+        padding: 0.125rem 0.5rem;
+        border-radius: 0.25rem;
+        background-color: $color-primary;
+        color: $color-light;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__post-title {
+        font-size: 1.1rem;
+        color: $color-dark;
+    }
+
+    &__post-excerpt {
+        flex: 1;
+        font-size: 0.9rem;
+        color: $color-secondary;
+    }
+
+    &__post-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: $color-secondary;
+    }
+}

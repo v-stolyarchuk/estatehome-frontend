@@ -1,0 +1,21 @@
+@use '../../../../shared/styles/main' as *;
+
+.review-rating {
+    /*** BASE ***/
+
+    display: inline-flex;
+    gap: 0.125rem;
+
+    /*** STAR ***/
+
+    &__star {
+        color: $color-secondary;
+        font-size: 1rem;
+
+        /*** MODIFIERS ***/
+
+        &--filled {
+            color: $color-warning;
+        }
+    }
+}

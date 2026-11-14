@@ -1,0 +1,49 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.product-cart-panel {
+    /*** BASE ***/
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    /*** ELEMENTS ***/
+
+    &__quantity {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    &__quantity-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.75rem;
+        height: 1.75rem;
+        border: 1px solid $color-secondary;
+        border-radius: 0.25rem;
+        background-color: $color-light;
+        color: $color-dark;
+        font-size: 1rem;
+        line-height: 1;
+        cursor: pointer;
+
+        &:hover:not(:disabled) {
+            border-color: $color-primary;
+            color: $color-primary;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    }
+
+    &__quantity-value {
+        min-width: 2rem;
+        text-align: center;
+        font-weight: 600;
+        color: $color-dark;
+    }
+}

@@ -1,0 +1,202 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.product-card {
+    /*** BASE ***/
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: $color-light;
+    border: 1px solid rgb(0 0 0 / 8%);
+    border-radius: 1rem;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgb(0 123 255 / 25%);
+        box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%);
+    }
+
+    /*** ELEMENTS ***/
+
+    &__image {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 4 / 3;
+        background-color: #fff;
+        border-bottom: 1px solid rgb(0 0 0 / 6%);
+        overflow: hidden;
+    }
+
+    &__image-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    &__placeholder {
+        color: $color-secondary;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &__body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.1rem 1.1rem 1.25rem;
+    }
+
+    &__category {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $color-primary;
+    }
+
+    &__title {
+        font-size: 1.05rem;
+        font-weight: 600;
+        line-height: 1.3;
+        color: $color-dark;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    &__description {
+        flex: 1;
+        font-size: 0.85rem;
+        line-height: 1.45;
+        color: $color-secondary;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        padding-top: 0.85rem;
+        border-top: 1px solid rgb(0 0 0 / 6%);
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+    }
+
+    &__price-current {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $color-dark;
+    }
+
+    &__price-old {
+        font-size: 0.8rem;
+        color: $color-secondary;
+        text-decoration: line-through;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.5rem;
+    }
+
+    &__badges {
+        position: absolute;
+        top: 0.6rem;
+        left: 0.6rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    &__badge {
+        padding: 0.2rem 0.6rem;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        box-shadow: 0 0.15rem 0.5rem rgb(0 0 0 / 15%);
+
+        /*** MODIFIERS ***/
+
+        &--new {
+            background-color: $color-info;
+            color: $color-light;
+        }
+
+        &--bestseller {
+            background-color: $color-primary;
+            color: $color-light;
+        }
+
+        &--on-order {
+            background-color: $color-warning;
+            color: $color-dark;
+        }
+
+        &--out-of-stock {
+            background-color: $color-danger;
+            color: $color-light;
+        }
+
+        &--discount {
+            background-color: $color-danger;
+            color: $color-light;
+        }
+    }
+
+    &__rating {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: $color-secondary;
+    }
+
+    &__rating-star {
+        color: #f59e0b;
+    }
+}

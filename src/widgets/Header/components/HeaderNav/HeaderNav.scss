@@ -1,0 +1,53 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.header-nav {
+    /*** BASE ***/
+
+    display: none;
+
+    @include onDesktop {
+        display: block;
+    }
+
+    /*** ELEMENTS ***/
+
+    &__list {
+        display: flex;
+        gap: 0.25rem;
+        padding: 0.25rem;
+        list-style: none;
+        background-color: rgb(0 0 0 / 4%);
+        border-radius: 999px;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 0.45rem 1.1rem;
+        border-radius: 999px;
+        color: $color-dark;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+
+        /*** MODIFIERS ***/
+
+        &--active {
+            background-color: $color-primary;
+            color: $color-light;
+            box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, $color-primary 35%, transparent);
+        }
+
+        /*** STATES ***/
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &--active:hover {
+            color: $color-light;
+        }
+    }
+}

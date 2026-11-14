@@ -1,0 +1,59 @@
+@use '../../shared/styles/main' as *;
+
+.footer {
+    /*** BASE ***/
+
+    margin-top: 3rem;
+    background-color: $color-dark;
+    color: $color-light;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem;
+    }
+
+    /*** BRAND ***/
+
+    &__logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-light;
+        text-decoration: none;
+    }
+
+    &__tagline {
+        margin-top: 0.5rem;
+        color: $color-secondary;
+        font-size: 0.9rem;
+    }
+
+    /*** SECTIONS ***/
+
+    &__sections {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+
+        @include onTablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @include onDesktop {
+        &__inner {
+            flex-flow: row wrap;
+        }
+
+        &__brand {
+            flex: 1 1 100%;
+        }
+
+        &__sections {
+            flex: 2 1 auto;
+        }
+    }
+}
