@@ -65,3 +65,4 @@
 15.11 - Single-sourced social links and nav items into shared/config
 15.11 - Fixed category slugs in 20 new products (gadgets→gadgets-energy, sport-hobby→hobby-sports)
 15.11 - Wired 8 real product images (moved from not-prepared, mapped to p-001..p-008)
+15.11 - Committed all session changes and deployed to gh-pages (verified live asset hashes + 200s)
