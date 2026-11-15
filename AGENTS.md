@@ -55,8 +55,19 @@ Rules for working in this repository. Read this file before making any changes.
 
 ## Deployment
 
-- Production deploys to GitHub Pages via `.github/workflows/` — it runs on every push to `main`.
-- To deploy: commit all changes and `git push origin main`. Do not push to other branches expecting a deploy.
+- GitHub Pages serves the `gh-pages` branch (classic branch deploy — GitHub Actions is disabled on this account due to a billing lock, so `deploy.yml` is manual-only).
+- To deploy: run `npm run build`, then copy `dist/` contents into the `gh-pages` branch and push it. Example:
+
+  ```bash
+  git worktree add "$TEMP/estatehome-ghpages" gh-pages
+  rm -rf "$TEMP/estatehome-ghpages"/* "$TEMP/estatehome-ghpages"/.gitignore
+  cp -r dist/. "$TEMP/estatehome-ghpages"/
+  cd "$TEMP/estatehome-ghpages" && git checkout -- .gitignore 2>/dev/null; git add -A && git commit -m "Deploy" && git push origin gh-pages
+  git worktree remove "$TEMP/estatehome-ghpages" --force
+  ```
+
+  (On Windows/Git Bash use `$TEMP`; the `.gitignore` restore keeps the branch's ignore file intact.)
+- Do not delete the worktree's `.git` file when clearing it — restore dotfiles selectively.
 - `vite.config.ts` uses `base: './'` and `HashRouter`; `scripts/copy-404.mjs` copies `index.html` to `404.html` for SPA fallback — keep both intact.
 
 ## Progress logging

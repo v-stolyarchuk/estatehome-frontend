@@ -31,3 +31,4 @@
 15.11 - Added shared/ui/Container (max-width 1200px) wrapping routed content between Header and Footer; aligned footer desktop padding; catalog page vertical rhythm (filter margin, controls gap); body now uses color-bg and color-ink palette tokens
 15.11 - PageHero: switched to light sage-to-plaster gradient with ink/ink-soft text and surface badge for contrast
 15.11 - Documented deploy rule in AGENTS.md: push to main triggers GitHub Pages deploy
+15.11 - Fixed deploy: Actions blocked by account billing lock; switched to gh-pages branch deploy (build locally, push dist), documented in AGENTS.md, workflow set to manual-only
