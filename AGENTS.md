@@ -53,6 +53,12 @@ Rules for working in this repository. Read this file before making any changes.
 - Keep responsive styles grouped logically and use existing responsive mixins.
 - Maintain consistent formatting and ordering of CSS properties.
 
+## Deployment
+
+- Production deploys to GitHub Pages via `.github/workflows/` — it runs on every push to `main`.
+- To deploy: commit all changes and `git push origin main`. Do not push to other branches expecting a deploy.
+- `vite.config.ts` uses `base: './'` and `HashRouter`; `scripts/copy-404.mjs` copies `index.html` to `404.html` for SPA fallback — keep both intact.
+
 ## Progress logging
 
 - After every meaningful change, append one line to `progress.txt` in this format:

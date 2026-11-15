@@ -30,3 +30,4 @@
 15.11 - Replaced old color variables with the new palette (moss/terracotta/sale/success/brass/ink/surface etc.) across all SCSS, removed hardcoded hex/rgb colors, footer uses moss-dark, CTA buttons terracotta
 15.11 - Added shared/ui/Container (max-width 1200px) wrapping routed content between Header and Footer; aligned footer desktop padding; catalog page vertical rhythm (filter margin, controls gap); body now uses color-bg and color-ink palette tokens
 15.11 - PageHero: switched to light sage-to-plaster gradient with ink/ink-soft text and surface badge for contrast
+15.11 - Documented deploy rule in AGENTS.md: push to main triggers GitHub Pages deploy
