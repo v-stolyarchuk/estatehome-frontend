@@ -5,8 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EstateHome</title>
-    <script type="module" crossorigin src="./assets/index-DYBWX9VH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D26uDCfU.css">
+    <script>
+      // Встановлюємо тему до першого рендеру, щоб уникнути спалаху світлої теми.
+      // Ключ має збігатися з THEME_STORAGE_KEY у src/shared/config/constants.ts
+      try {
+        var t = localStorage.getItem('estatehome-theme')
+        if (t !== 'light' && t !== 'dark') {
+          t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        if (t === 'dark') document.documentElement.dataset.theme = 'dark'
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-DhtTtkqI.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DvmEp4MT.css">
   </head>
   <body>
     <div id="root"></div>
