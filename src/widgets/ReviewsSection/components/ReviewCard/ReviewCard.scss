@@ -7,14 +7,14 @@
     flex-direction: column;
     gap: 0.75rem;
     padding: 1.25rem;
-    background-color: $color-light;
+    background-color: $color-surface;
     border-radius: 0.5rem;
 
     /*** ELEMENTS ***/
 
     &__text {
         flex: 1;
-        color: $color-dark;
+        color: $color-ink;
         font-size: 0.95rem;
         line-height: 1.5;
     }

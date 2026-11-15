@@ -6,7 +6,7 @@
     &__title {
         margin-bottom: 0.75rem;
         font-size: 1rem;
-        color: $color-light;
+        color: $color-surface;
     }
 
     /*** LIST ***/
@@ -18,13 +18,13 @@
     }
 
     &__link {
-        color: $color-secondary;
+        color: $color-sage;
         font-size: 0.9rem;
         text-decoration: none;
         transition: color 0.2s ease;
 
         &:hover {
-            color: $color-light;
+            color: $color-surface;
         }
     }
 }

@@ -34,10 +34,10 @@
         flex-shrink: 0;
         width: 2.25rem;
         height: 2.25rem;
-        border: 1px solid $color-secondary;
+        border: 1px solid $color-ink-soft;
         border-radius: 50%;
-        background-color: $color-light;
-        color: $color-dark;
+        background-color: $color-surface;
+        color: $color-ink;
         font-size: 1.25rem;
         line-height: 1;
         cursor: pointer;
@@ -46,8 +46,8 @@
             color 0.2s ease;
 
         &:hover {
-            border-color: $color-primary;
-            color: $color-primary;
+            border-color: $color-moss;
+            color: $color-moss;
         }
     }
 }

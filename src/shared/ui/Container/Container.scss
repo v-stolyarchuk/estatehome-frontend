@@ -1,0 +1,16 @@
+@use '../../styles/main.scss' as *;
+
+.container {
+    /*** BASE ***/
+
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 1.5rem;
+
+    /*** RESPONSIVE ***/
+
+    @include onDesktop {
+        padding: 2rem;
+    }
+}

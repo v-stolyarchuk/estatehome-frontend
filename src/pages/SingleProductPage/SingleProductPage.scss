@@ -33,7 +33,7 @@
         justify-content: center;
         aspect-ratio: 1;
         overflow: hidden;
-        background-color: $color-dark;
+        background-color: $color-plaster;
         border-radius: 0.5rem;
 
         img {
@@ -44,7 +44,7 @@
     }
 
     &__placeholder {
-        color: $color-light;
+        color: $color-surface;
         font-size: 1rem;
         text-transform: uppercase;
     }
@@ -73,7 +73,7 @@
         /*** MODIFIERS ***/
 
         &--active {
-            border-color: $color-primary;
+            border-color: $color-moss;
         }
     }
 
@@ -100,28 +100,28 @@
         /*** MODIFIERS ***/
 
         &--new {
-            background-color: $color-info;
-            color: $color-light;
+            background-color: $color-terracotta;
+            color: $color-surface;
         }
 
         &--bestseller {
-            background-color: $color-primary;
-            color: $color-light;
+            background-color: $color-moss;
+            color: $color-surface;
         }
 
         &--in-stock {
             background-color: $color-success;
-            color: $color-light;
+            color: $color-surface;
         }
 
         &--on-order {
-            background-color: $color-warning;
-            color: $color-dark;
+            background-color: $color-brass;
+            color: $color-ink;
         }
 
         &--out-of-stock {
-            background-color: $color-danger;
-            color: $color-light;
+            background-color: $color-sale;
+            color: $color-surface;
         }
     }
 
@@ -129,12 +129,12 @@
         font-size: 0.8rem;
         font-weight: 600;
         text-transform: uppercase;
-        color: $color-primary;
+        color: $color-moss;
     }
 
     &__title {
         font-size: 1.5rem;
-        color: $color-dark;
+        color: $color-ink;
 
         @include onDesktop {
             font-size: 2rem;
@@ -143,12 +143,12 @@
 
     &__sku {
         font-size: 0.8rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
     }
 
     &__rating {
         font-size: 0.9rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
     }
 
     &__price {
@@ -160,26 +160,26 @@
     &__price-current {
         font-size: 1.75rem;
         font-weight: 700;
-        color: $color-dark;
+        color: $color-ink;
     }
 
     &__price-old {
         font-size: 1rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
         text-decoration: line-through;
     }
 
     &__discount {
         padding: 0.125rem 0.5rem;
         border-radius: 0.25rem;
-        background-color: $color-danger;
-        color: $color-light;
+        background-color: $color-sale;
+        color: $color-surface;
         font-size: 0.8rem;
         font-weight: 700;
     }
 
     &__description {
-        color: $color-secondary;
+        color: $color-ink-soft;
         line-height: 1.6;
     }
 
@@ -193,7 +193,7 @@
 
     &__section-title {
         font-size: 1.1rem;
-        color: $color-dark;
+        color: $color-ink;
     }
 
     &__attributes-list {
@@ -206,16 +206,16 @@
         justify-content: space-between;
         gap: 1rem;
         padding: 0.5rem 0;
-        border-bottom: 1px solid $color-light;
+        border-bottom: 1px solid $color-line;
 
         dt {
-            color: $color-secondary;
+            color: $color-ink-soft;
         }
 
         dd {
             margin: 0;
             font-weight: 600;
-            color: $color-dark;
+            color: $color-ink;
             text-align: right;
         }
     }

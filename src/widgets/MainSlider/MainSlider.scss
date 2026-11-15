@@ -26,21 +26,21 @@
         /*** THEMES ***/
 
         &--primary {
-            --slide-accent: #{$color-primary};
+            --slide-accent: #{$color-moss};
 
-            background-color: color-mix(in srgb, $color-primary 8%, $color-light);
+            background-color: color-mix(in srgb, $color-moss 8%, $color-surface);
         }
 
         &--info {
-            --slide-accent: #{$color-info};
+            --slide-accent: #{$color-terracotta};
 
-            background-color: color-mix(in srgb, $color-info 8%, $color-light);
+            background-color: color-mix(in srgb, $color-terracotta 8%, $color-surface);
         }
 
         &--success {
             --slide-accent: #{$color-success};
 
-            background-color: color-mix(in srgb, $color-success 8%, $color-light);
+            background-color: color-mix(in srgb, $color-success 8%, $color-surface);
         }
     }
 
@@ -55,8 +55,8 @@
         height: 2.5rem;
         border: none;
         border-radius: 50%;
-        background-color: $color-light;
-        color: $color-dark;
+        background-color: $color-surface;
+        color: $color-ink;
         font-size: 1.5rem;
         line-height: 1;
         cursor: pointer;

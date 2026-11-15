@@ -16,17 +16,17 @@
         justify-content: center;
         width: 2.25rem;
         height: 2.25rem;
-        background: linear-gradient(135deg, $color-primary, $color-info);
+        background: linear-gradient(135deg, $color-moss, $color-terracotta);
         border-radius: 0.6rem;
         font-size: 1.15rem;
-        box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, $color-primary 35%, transparent);
+        box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, $color-moss 35%, transparent);
         transition: transform 0.2s ease;
     }
 
     &__title {
         font-size: 1.25rem;
         font-weight: 700;
-        color: $color-dark;
+        color: $color-ink;
         letter-spacing: -0.01em;
     }
 

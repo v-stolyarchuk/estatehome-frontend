@@ -18,7 +18,7 @@
         inset: 0;
         padding: 0;
         border: none;
-        background-color: rgb(0 0 0 / 50%);
+        background-color: color-mix(in srgb, $color-ink 50%, transparent);
         cursor: pointer;
     }
 
@@ -30,7 +30,7 @@
         max-width: 480px;
         max-height: 80vh;
         overflow-y: auto;
-        background-color: $color-light;
+        background-color: $color-surface;
         border-radius: 0.5rem;
         box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 20%);
     }
@@ -41,28 +41,28 @@
         justify-content: space-between;
         gap: 1rem;
         padding: 1rem 1.25rem;
-        border-bottom: 1px solid $color-secondary;
+        border-bottom: 1px solid $color-ink-soft;
     }
 
     &__title {
         font-size: 1.1rem;
-        color: $color-dark;
+        color: $color-ink;
     }
 
     &__close {
         border: none;
         background: none;
         font-size: 1.1rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
         cursor: pointer;
 
         &:hover {
-            color: $color-dark;
+            color: $color-ink;
         }
     }
 
     &__body {
         padding: 1.25rem;
-        color: $color-dark;
+        color: $color-ink;
     }
 }

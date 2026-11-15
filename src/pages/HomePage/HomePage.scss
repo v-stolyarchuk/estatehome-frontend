@@ -30,8 +30,8 @@
         align-items: center;
         gap: 0.5rem;
         padding: 1.75rem 1.5rem;
-        background-color: $color-light;
-        border: 1px solid rgb(0 0 0 / 6%);
+        background-color: $color-surface;
+        border: 1px solid $color-line;
         border-radius: 1rem;
         text-align: center;
         transition:
@@ -41,7 +41,7 @@
 
         &:hover {
             transform: translateY(-4px);
-            border-color: rgb(0 123 255 / 30%);
+            border-color: color-mix(in srgb, $color-moss 30%, transparent);
             box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 8%);
         }
     }
@@ -53,7 +53,7 @@
         width: 3.25rem;
         height: 3.25rem;
         margin-bottom: 0.25rem;
-        background-color: color-mix(in srgb, $color-primary 10%, $color-light);
+        background-color: color-mix(in srgb, $color-moss 10%, $color-surface);
         border-radius: 50%;
         font-size: 1.6rem;
     }
@@ -61,11 +61,11 @@
     &__feature-title {
         font-size: 1.1rem;
         font-weight: 600;
-        color: $color-dark;
+        color: $color-ink;
     }
 
     &__feature-text {
-        color: $color-secondary;
+        color: $color-ink-soft;
         font-size: 0.9rem;
         line-height: 1.45;
     }
@@ -81,7 +81,7 @@
         margin-bottom: 1.5rem;
         font-size: 1.6rem;
         font-weight: 700;
-        color: $color-dark;
+        color: $color-ink;
 
         &::after {
             content: '';
@@ -90,7 +90,7 @@
             left: 0;
             width: 3rem;
             height: 0.25rem;
-            background-color: $color-primary;
+            background-color: $color-moss;
             border-radius: 999px;
         }
     }
@@ -112,8 +112,8 @@
         flex-direction: column;
         gap: 0.25rem;
         padding: 1.25rem 1rem 1rem;
-        background-color: $color-light;
-        border: 1px solid rgb(0 0 0 / 6%);
+        background-color: $color-surface;
+        border: 1px solid $color-line;
         border-radius: 1rem;
         text-decoration: none;
         transition:
@@ -123,12 +123,12 @@
 
         &:hover {
             transform: translateY(-4px);
-            border-color: $color-primary;
+            border-color: $color-moss;
             box-shadow: 0 0.75rem 1.5rem rgb(0 0 0 / 10%);
 
             .home-page__category-arrow {
                 transform: translateX(0.25rem);
-                color: $color-primary;
+                color: $color-moss;
             }
         }
     }
@@ -136,12 +136,12 @@
     &__category-name {
         padding-right: 1.25rem;
         font-weight: 600;
-        color: $color-dark;
+        color: $color-ink;
     }
 
     &__category-count {
         font-size: 0.85rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
     }
 
     &__category-arrow {
@@ -149,7 +149,7 @@
         top: 1rem;
         right: 1rem;
         font-size: 1.1rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
         transition:
             transform 0.25s ease,
             color 0.25s ease;
@@ -164,7 +164,7 @@
         gap: 1rem;
         padding: 3rem 1.5rem;
         text-align: center;
-        background: linear-gradient(135deg, $color-primary 0%, #0056b3 100%);
+        background: linear-gradient(135deg, $color-moss 0%, $color-terracotta 100%);
         border-radius: 1rem;
     }
 
@@ -173,7 +173,7 @@
         font-size: 1.6rem;
         font-weight: 700;
         line-height: 1.25;
-        color: $color-light;
+        color: $color-surface;
 
         @include onDesktop {
             font-size: 2.1rem;

@@ -10,8 +10,8 @@
     height: 2rem;
     border: none;
     border-radius: 50%;
-    background-color: $color-light;
-    color: $color-secondary;
+    background-color: $color-surface;
+    color: $color-ink-soft;
     font-size: 1.1rem;
     line-height: 1;
     cursor: pointer;
@@ -26,7 +26,7 @@
     /*** MODIFIERS ***/
 
     &--active {
-        color: $color-danger;
+        color: $color-sale;
     }
 
     &--overlay {

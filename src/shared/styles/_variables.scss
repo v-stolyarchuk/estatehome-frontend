@@ -1,8 +1,24 @@
-$color-primary: #007bff;
-$color-secondary: #6c757d;
-$color-success: #28a745;
-$color-danger: #dc3545;
-$color-warning: #ffc107;
-$color-info: #17a2b8;
-$color-light: #f8f9fa;
-$color-dark: #343a40;
+// Фони
+$color-bg: #f6f3ec; // тепла основа сторінки
+$color-surface: #fff; // картки, поля, хедер
+$color-plaster: #ebe6da; // чергові секції, плашки
+$color-sage: #e3ece5; // світлий зелений: чипи, активні фільтри
+
+// Бренд
+$color-moss: #2f5d46; // основний (контраст з білим 7,6)
+$color-moss-dark: #1f4331; // hover, футер
+
+// Акцент для дій
+$color-terracotta: #bd5126; // кнопки «У кошик», CTA (білий текст 4,8)
+$color-terracotta-dark: #a8431c; // hover (6,0)
+
+// Статуси
+$color-sale: #c0392b; // ціна зі знижкою, бейдж акції
+$color-success: #2e7d4f; // «В наявності»
+
+// Декор і текст
+$color-brass: #c28a2c; // зірки, тонкі лінії (тільки декор)
+$color-brass-text: #9a6410; // якщо латунь потрібна текстом (5,0)
+$color-ink: #1f2a26; // основний текст (13,4 на фоні)
+$color-ink-soft: #5a655f; // другорядний текст (5,5)
+$color-line: #ddd6c8; // рамки, теплішого відтінку

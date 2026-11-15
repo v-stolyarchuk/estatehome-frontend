@@ -27,3 +27,6 @@
 14.11 - Cart page polish: structured item rows (contain-fit thumbs, clamped titles, pill stepper, hover remove), sticky rounded summary card with gradient checkout, header with item count badge
 14.11 - Added shared/ui/Breadcrumbs (nav landmark, chevron separators, active page) on Catalog/Cart/Favourites/SingleProduct/Contacts/Blog pages; replaced product page back-link
 14.11 - Deployed to GitHub: repo v-stolyarchuk/estatehome-frontend, vite base './', HashRouter, 404.html SPA fallback, GitHub Actions Pages workflow
+15.11 - Replaced old color variables with the new palette (moss/terracotta/sale/success/brass/ink/surface etc.) across all SCSS, removed hardcoded hex/rgb colors, footer uses moss-dark, CTA buttons terracotta
+15.11 - Added shared/ui/Container (max-width 1200px) wrapping routed content between Header and Footer; aligned footer desktop padding; catalog page vertical rhythm (filter margin, controls gap); body now uses color-bg and color-ink palette tokens
+15.11 - PageHero: switched to light sage-to-plaster gradient with ink/ink-soft text and surface badge for contrast

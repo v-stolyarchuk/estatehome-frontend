@@ -4,8 +4,8 @@
     /*** BASE ***/
 
     margin-top: 3rem;
-    background-color: $color-dark;
-    color: $color-light;
+    background-color: $color-moss-dark;
+    color: $color-surface;
 
     &__inner {
         display: flex;
@@ -21,13 +21,13 @@
     &__logo {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $color-light;
+        color: $color-surface;
         text-decoration: none;
     }
 
     &__tagline {
         margin-top: 0.5rem;
-        color: $color-secondary;
+        color: $color-sage;
         font-size: 0.9rem;
     }
 
@@ -46,6 +46,7 @@
     @include onDesktop {
         &__inner {
             flex-flow: row wrap;
+            padding-inline: 2rem;
         }
 
         &__brand {

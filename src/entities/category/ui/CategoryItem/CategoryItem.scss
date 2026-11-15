@@ -8,9 +8,9 @@
     align-items: center;
     gap: 0.25rem;
     padding: 1rem;
-    border: 1px solid $color-secondary;
+    border: 1px solid $color-ink-soft;
     border-radius: 0.5rem;
-    background-color: $color-light;
+    background-color: $color-surface;
     font: inherit;
     cursor: pointer;
     transition:
@@ -18,18 +18,18 @@
         background-color 0.2s ease;
 
     &:hover {
-        border-color: $color-primary;
+        border-color: $color-moss;
     }
 
     /*** ELEMENTS ***/
 
     &__name {
         font-weight: 600;
-        color: $color-dark;
+        color: $color-ink;
     }
 
     &__count {
         font-size: 0.85rem;
-        color: $color-secondary;
+        color: $color-ink-soft;
     }
 }

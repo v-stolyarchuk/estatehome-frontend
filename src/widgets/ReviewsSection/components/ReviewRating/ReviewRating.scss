@@ -9,13 +9,13 @@
     /*** STAR ***/
 
     &__star {
-        color: $color-secondary;
+        color: $color-ink-soft;
         font-size: 1rem;
 
         /*** MODIFIERS ***/
 
         &--filled {
-            color: $color-warning;
+            color: $color-brass;
         }
     }
 }

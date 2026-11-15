@@ -13,12 +13,12 @@
     /*** VARIANTS ***/
 
     &--primary {
-        background-color: $color-primary;
-        color: $color-light;
+        background-color: $color-moss;
+        color: $color-surface;
     }
 
     &--danger {
-        background-color: $color-danger;
-        color: $color-light;
+        background-color: $color-sale;
+        color: $color-surface;
     }
 }

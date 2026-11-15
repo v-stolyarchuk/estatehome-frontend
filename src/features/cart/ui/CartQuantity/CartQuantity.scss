@@ -5,9 +5,9 @@
 
     display: inline-flex;
     align-items: center;
-    border: 1px solid rgb(0 0 0 / 12%);
+    border: 1px solid $color-line;
     border-radius: 999px;
-    background-color: #fff;
+    background-color: $color-surface;
     overflow: hidden;
 
     /*** ELEMENTS ***/
@@ -20,7 +20,7 @@
         height: 2rem;
         border: none;
         background-color: transparent;
-        color: $color-dark;
+        color: $color-ink;
         font-size: 1rem;
         font-weight: 700;
         line-height: 1;
@@ -32,12 +32,12 @@
         /*** STATES ***/
 
         &:hover:not(:disabled) {
-            background-color: color-mix(in srgb, $color-primary 12%, transparent);
-            color: $color-primary;
+            background-color: color-mix(in srgb, $color-moss 12%, transparent);
+            color: $color-moss;
         }
 
         &:disabled {
-            color: rgb(0 0 0 / 25%);
+            color: $color-ink-soft;
             cursor: not-allowed;
         }
     }
@@ -48,6 +48,6 @@
         text-align: center;
         font-size: 0.9rem;
         font-weight: 700;
-        color: $color-dark;
+        color: $color-ink;
     }
 }

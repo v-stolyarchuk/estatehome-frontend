@@ -36,23 +36,23 @@
     /*** VARIANTS ***/
 
     &--primary {
-        background-color: $color-primary;
-        color: $color-light;
+        background-color: $color-terracotta;
+        color: $color-surface;
     }
 
     &--secondary {
-        border: 1px solid $color-primary;
+        border: 1px solid $color-terracotta;
         background-color: transparent;
-        color: $color-primary;
+        color: $color-terracotta;
     }
 
     &--danger {
-        background-color: $color-danger;
-        color: $color-light;
+        background-color: $color-sale;
+        color: $color-surface;
     }
 
     &--success {
         background-color: $color-success;
-        color: $color-light;
+        color: $color-surface;
     }
 }
