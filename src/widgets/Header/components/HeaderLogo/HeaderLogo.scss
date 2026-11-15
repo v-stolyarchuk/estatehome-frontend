@@ -7,6 +7,11 @@
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
+    min-width: 0;
+
+    @include onMobile {
+        gap: 0.4rem;
+    }
 
     /*** ELEMENTS ***/
 
@@ -21,6 +26,13 @@
         font-size: 1.15rem;
         box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, $color-moss 35%, transparent);
         transition: transform 0.2s ease;
+
+        @include onMobile {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
     }
 
     &__title {
@@ -28,6 +40,10 @@
         font-weight: 700;
         color: $color-ink;
         letter-spacing: -0.01em;
+
+        @include onMobile {
+            font-size: 1.05rem;
+        }
     }
 
     /*** STATES ***/

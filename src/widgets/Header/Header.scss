@@ -22,6 +22,11 @@
         margin: 0 auto;
         padding: 0.75rem 1.5rem;
 
+        @include onMobile {
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+
         @include onDesktop {
             padding: 1rem 2rem;
         }
@@ -31,5 +36,6 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        margin-left: auto;
     }
 }

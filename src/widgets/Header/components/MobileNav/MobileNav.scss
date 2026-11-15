@@ -26,6 +26,13 @@
         cursor: pointer;
         transition: background-color 0.2s ease;
 
+        @include onMobile {
+            width: 2.25rem;
+            height: 2.25rem;
+            padding: 0.4rem;
+            font-size: 1.2rem;
+        }
+
         &:hover {
             background-color: color-mix(in srgb, $color-ink 6%, transparent);
         }
