@@ -21,7 +21,7 @@ const slides: Slide[] = [
     },
     {
         id: 2,
-        image: '/images/products/product-template1.jpg',
+        image: 'images/products/product-template1.jpg',
         badge: 'Безкоштовна доставка',
         title: 'Замовлення від 2 000 ₴ — з доставкою 0 ₴',
         text: 'Дбайливо пакуємо та доставляємо по всій Україні. Відстежуйте посилку в особистому кабінеті.',
@@ -31,7 +31,7 @@ const slides: Slide[] = [
     },
     {
         id: 3,
-        image: '/images/products/product-template2.jpg',
+        image: 'images/products/product-template2.jpg',
         badge: 'Повернення 30 днів',
         title: 'Не сподобалося? Повернемо кошти',
         text: 'Гарантія задоволення: повернення або обмін протягом 30 днів без зайвих питань.',
