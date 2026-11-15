@@ -5,6 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EstateHome</title>
+    <script>
+      // Встановлюємо тему до першого рендеру, щоб уникнути спалаху світлої теми.
+      // Ключ має збігатися з THEME_STORAGE_KEY у src/shared/config/constants.ts
+      try {
+        var t = localStorage.getItem('estatehome-theme')
+        if (t !== 'light' && t !== 'dark') {
+          t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        if (t === 'dark') document.documentElement.dataset.theme = 'dark'
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

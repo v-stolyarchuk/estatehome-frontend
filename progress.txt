@@ -66,3 +66,6 @@
 15.11 - Fixed category slugs in 20 new products (gadgets→gadgets-energy, sport-hobby→hobby-sports)
 15.11 - Wired 8 real product images (moved from not-prepared, mapped to p-001..p-008)
 15.11 - Committed all session changes and deployed to gh-pages (verified live asset hashes + 200s)
+15.11 - Added dark theme: CSS-var color tokens, persisted toggle in header, pre-paint script in index.html
+15.11 - Added checkout flow: /checkout page with contact/delivery form, order summary, confirmation screen; cart button now navigates there
+15.11 - Removed dead code: Maybe/WithId types, selectCategory, addProduct, setTheme export, shared/assets

@@ -37,7 +37,7 @@
 
     &--primary {
         background-color: $color-terracotta;
-        color: $color-surface;
+        color: $color-on-accent;
     }
 
     &--secondary {
@@ -48,11 +48,11 @@
 
     &--danger {
         background-color: $color-sale;
-        color: $color-surface;
+        color: $color-on-accent;
     }
 
     &--success {
         background-color: $color-success;
-        color: $color-surface;
+        color: $color-on-accent;
     }
 }

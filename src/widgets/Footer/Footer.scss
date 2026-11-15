@@ -5,7 +5,7 @@
 
     margin-top: 3rem;
     background-color: $color-moss-dark;
-    color: $color-surface;
+    color: $color-on-accent;
 
     &__inner {
         display: flex;
@@ -21,7 +21,7 @@
     &__logo {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $color-surface;
+        color: $color-on-accent;
         text-decoration: none;
     }
 

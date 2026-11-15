@@ -6,7 +6,7 @@
     &__title {
         margin-bottom: 0.75rem;
         font-size: 1rem;
-        color: $color-surface;
+        color: $color-on-accent;
     }
 
     /*** LIST ***/
@@ -24,7 +24,7 @@
         transition: color 0.2s ease;
 
         &:hover {
-            color: $color-surface;
+            color: $color-on-accent;
         }
     }
 }

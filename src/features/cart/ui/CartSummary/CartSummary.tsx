@@ -1,6 +1,6 @@
 import './CartSummary.scss'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks'
 import { formatPrice } from '../../../../shared/lib'
@@ -8,6 +8,7 @@ import { clearCart, selectCartCount, selectCartTotal } from '../../model/cartSli
 
 export const CartSummary = () => {
     const dispatch = useAppDispatch()
+    const navigate = useNavigate()
     const count = useAppSelector(selectCartCount)
     const total = useAppSelector(selectCartTotal)
 
@@ -26,7 +27,11 @@ export const CartSummary = () => {
                 <span className="cart-summary__label">Разом</span>
                 <span className="cart-summary__value">{formatPrice(total)}</span>
             </div>
-            <button type="button" className="cart-summary__checkout">
+            <button
+                type="button"
+                className="cart-summary__checkout"
+                onClick={() => navigate('/checkout')}
+            >
                 Оформити замовлення
             </button>
             <button

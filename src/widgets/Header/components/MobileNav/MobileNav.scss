@@ -86,11 +86,11 @@
 
         &--active {
             background-color: $color-moss;
-            color: $color-surface;
+            color: $color-on-accent;
 
             &:hover {
                 background-color: $color-moss;
-                color: $color-surface;
+                color: $color-on-accent;
             }
         }
     }

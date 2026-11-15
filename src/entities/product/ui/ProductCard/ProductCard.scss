@@ -166,12 +166,12 @@
 
         &--new {
             background-color: $color-terracotta;
-            color: $color-surface;
+            color: $color-on-accent;
         }
 
         &--bestseller {
             background-color: $color-moss;
-            color: $color-surface;
+            color: $color-on-accent;
         }
 
         &--on-order {
@@ -181,12 +181,12 @@
 
         &--out-of-stock {
             background-color: $color-sale;
-            color: $color-surface;
+            color: $color-on-accent;
         }
 
         &--discount {
             background-color: $color-sale;
-            color: $color-surface;
+            color: $color-on-accent;
         }
     }
 

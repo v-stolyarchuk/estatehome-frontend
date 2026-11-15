@@ -1,24 +1,70 @@
-// Фони
-$color-bg: #f6f3ec; // тепла основа сторінки
-$color-surface: #fff; // картки, поля, хедер
-$color-plaster: #ebe6da; // чергові секції, плашки
-$color-sage: #e3ece5; // світлий зелений: чипи, активні фільтри
+// Кольори — CSS custom properties, тема перемикається через [data-theme='dark']
+// на <html>. Світла тема — значення за замовчуванням у :root.
 
-// Бренд
-$color-moss: #2f5d46; // основний (контраст з білим 7,6)
-$color-moss-dark: #1f4331; // hover, футер
+:root {
+    // Фони
+    --color-bg: #f6f3ec; // тепла основа сторінки
+    --color-surface: #fff; // картки, поля, хедер
+    --color-plaster: #ebe6da; // чергові секції, плашки
+    --color-sage: #e3ece5; // світлий зелений: чипи, активні фільтри
 
-// Акцент для дій
-$color-terracotta: #bd5126; // кнопки «У кошик», CTA (білий текст 4,8)
-$color-terracotta-dark: #a8431c; // hover (6,0)
+    // Бренд
+    --color-moss: #2f5d46; // основний (контраст з білим 7,6)
+    --color-moss-dark: #1f4331; // hover, футер
 
-// Статуси
-$color-sale: #c0392b; // ціна зі знижкою, бейдж акції
-$color-success: #2e7d4f; // «В наявності»
+    // Акцент для дій
+    --color-terracotta: #bd5126; // кнопки «У кошик», CTA (білий текст 4,8)
+    --color-terracotta-dark: #a8431c; // hover (6,0)
 
-// Декор і текст
-$color-brass: #c28a2c; // зірки, тонкі лінії (тільки декор)
-$color-brass-text: #9a6410; // якщо латунь потрібна текстом (5,0)
-$color-ink: #1f2a26; // основний текст (13,4 на фоні)
-$color-ink-soft: #5a655f; // другорядний текст (5,5)
-$color-line: #ddd6c8; // рамки, теплішого відтінку
+    // Статуси
+    --color-sale: #c0392b; // ціна зі знижкою, бейдж акції
+    --color-success: #2e7d4f; // «В наявності»
+
+    // Декор і текст
+    --color-brass: #c28a2c; // зірки, тонкі лінії (тільки декор)
+    --color-brass-text: #9a6410; // якщо латунь потрібна текстом (5,0)
+    --color-ink: #1f2a26; // основний текст (13,4 на фоні)
+    --color-ink-soft: #5a655f; // другорядний текст (5,5)
+    --color-line: #ddd6c8; // рамки, теплішого відтінку
+
+    // Світлий текст/іконки на акцентних, темних і фото-фонах
+    --color-on-accent: #fff;
+}
+
+:root[data-theme='dark'] {
+    --color-bg: #171d1a;
+    --color-surface: #222a25;
+    --color-plaster: #28302a;
+    --color-sage: #2e3a33;
+    --color-moss: #6fae8d;
+    --color-moss-dark: #24402f;
+    --color-terracotta: #d0692f;
+    --color-terracotta-dark: #b85a24;
+    --color-sale: #e0654f;
+    --color-success: #3d9b6c;
+    --color-brass: #d9ab4a;
+    --color-brass-text: #e5b95e;
+    --color-ink: #e9e5da;
+    --color-ink-soft: #a9b2ab;
+    --color-line: #3a443d;
+    --color-on-accent: #fff;
+}
+
+// SCSS-аліаси для зворотної сумісності — тепер резолвляться в CSS vars,
+// тому значення перемикаються рантаймно.
+$color-bg: var(--color-bg);
+$color-surface: var(--color-surface);
+$color-plaster: var(--color-plaster);
+$color-sage: var(--color-sage);
+$color-moss: var(--color-moss);
+$color-moss-dark: var(--color-moss-dark);
+$color-terracotta: var(--color-terracotta);
+$color-terracotta-dark: var(--color-terracotta-dark);
+$color-sale: var(--color-sale);
+$color-success: var(--color-success);
+$color-brass: var(--color-brass);
+$color-brass-text: var(--color-brass-text);
+$color-ink: var(--color-ink);
+$color-ink-soft: var(--color-ink-soft);
+$color-line: var(--color-line);
+$color-on-accent: var(--color-on-accent);

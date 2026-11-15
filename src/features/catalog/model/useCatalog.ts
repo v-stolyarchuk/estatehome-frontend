@@ -30,10 +30,6 @@ export const useCatalog = (initialCategories: string[] = [], initialQuery = '') 
         )
     }
 
-    const selectCategory = (category: string | null) => {
-        setSelectedCategories(category ? [category] : [])
-    }
-
     const resetFilters = () => {
         setQuery('')
         setSelectedCategories([])
@@ -74,7 +70,6 @@ export const useCatalog = (initialCategories: string[] = [], initialQuery = '') 
         categories,
         selectedCategories,
         toggleCategory,
-        selectCategory,
         resetFilters,
         hasActiveFilters,
         sortBy,

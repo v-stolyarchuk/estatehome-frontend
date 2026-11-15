@@ -6,6 +6,7 @@ import { useAppSelector } from '../../app/hooks'
 import { getCategoryLabel } from '../../entities/category'
 import type { ProductAttribute } from '../../entities/product'
 import {
+    getProductDiscountPercent,
     PRODUCT_AVAILABILITY_LABELS,
     PRODUCT_BADGE_LABELS,
     selectProducts,
@@ -35,10 +36,7 @@ export function SingleProductPage() {
     }
 
     const availabilityLabel = PRODUCT_AVAILABILITY_LABELS[product.availability]
-    const discount =
-        product.oldPrice && product.oldPrice > product.price
-            ? Math.round((1 - product.price / product.oldPrice) * 100)
-            : null
+    const discount = getProductDiscountPercent(product)
 
     return (
         <section className="single-product-page">
