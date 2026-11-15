@@ -1,16 +1,20 @@
 import './MainSlider.scss'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-import { useState } from 'react'
+import type { Settings } from 'react-slick'
+import SliderImport from 'react-slick'
 
-import heroImage from '../../assets/hero.png'
-import { SliderSettings } from './components/SliderSettings'
 import { SliderSlide } from './components/SliderSlide'
 import type { Slide } from './MainSlider.types'
+
+// Vite's CJS interop returns the module namespace; unwrap the real component
+const Slider = (SliderImport as unknown as { default: typeof SliderImport }).default ?? SliderImport
 
 const slides: Slide[] = [
     {
         id: 1,
-        image: heroImage,
+        image: 'images/home-slider/room-slide.jpg',
         badge: 'Хіт сезону',
         title: 'Все для дому — в одному магазині',
         text: 'Меблі, декор, сад і товари для тварин. Швидка доставка та оплата при отриманні.',
@@ -21,7 +25,7 @@ const slides: Slide[] = [
     },
     {
         id: 2,
-        image: 'images/products/product-template1.jpg',
+        image: 'images/home-slider/bath-slide.jpg',
         badge: 'Безкоштовна доставка',
         title: 'Замовлення від 2 000 ₴ — з доставкою 0 ₴',
         text: 'Дбайливо пакуємо та доставляємо по всій Україні. Відстежуйте посилку в особистому кабінеті.',
@@ -31,7 +35,7 @@ const slides: Slide[] = [
     },
     {
         id: 3,
-        image: 'images/products/product-template2.jpg',
+        image: 'images/home-slider/kitchen-slide.jpg',
         badge: 'Повернення 30 днів',
         title: 'Не сподобалося? Повернемо кошти',
         text: 'Гарантія задоволення: повернення або обмін протягом 30 днів без зайвих питань.',
@@ -41,61 +45,38 @@ const slides: Slide[] = [
     },
 ]
 
+const settings: Settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+}
+
 export const MainSlider = () => {
-    const [activeIndex, setActiveIndex] = useState(0)
-
-    const goTo = (index: number) => {
-        setActiveIndex((index + slides.length) % slides.length)
-    }
-
     return (
         <section className="main-slider">
-            <div className="main-slider__viewport">
-                <div
-                    className="main-slider__track"
-                    style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-                >
-                    {slides.map((slide) => (
-                        <div
-                            key={slide.id}
-                            className={`main-slider__slide main-slider__slide--${slide.theme}`}
-                        >
-                            <SliderSlide
-                                image={slide.image}
-                                badge={slide.badge}
-                                title={slide.title}
-                                text={slide.text}
-                                highlight={slide.highlight}
-                                ctaLabel={slide.ctaLabel}
-                                ctaTo={slide.ctaTo}
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <button
-                type="button"
-                className="main-slider__arrow main-slider__arrow--prev"
-                onClick={() => goTo(activeIndex - 1)}
-                aria-label="Попередній слайд"
-            >
-                ‹
-            </button>
-            <button
-                type="button"
-                className="main-slider__arrow main-slider__arrow--next"
-                onClick={() => goTo(activeIndex + 1)}
-                aria-label="Наступний слайд"
-            >
-                ›
-            </button>
-
-            <SliderSettings
-                total={slides.length}
-                activeIndex={activeIndex}
-                onSelect={setActiveIndex}
-            />
+            <Slider {...settings}>
+                {slides.map((slide) => (
+                    <div
+                        key={slide.id}
+                        className={`main-slider__slide main-slider__slide--${slide.theme}`}
+                    >
+                        <SliderSlide
+                            image={slide.image}
+                            badge={slide.badge}
+                            title={slide.title}
+                            text={slide.text}
+                            highlight={slide.highlight}
+                            ctaLabel={slide.ctaLabel}
+                            ctaTo={slide.ctaTo}
+                        />
+                    </div>
+                ))}
+            </Slider>
         </section>
     )
 }

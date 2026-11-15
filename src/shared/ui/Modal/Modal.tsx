@@ -6,10 +6,19 @@ interface ModalProps {
     isOpen: boolean
     onClose: () => void
     title?: string
+    wide?: boolean
+    fit?: boolean
     children: ReactNode
 }
 
-export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
+export const Modal = ({
+    isOpen,
+    onClose,
+    title,
+    wide = false,
+    fit = false,
+    children,
+}: ModalProps) => {
     if (!isOpen) {
         return null
     }
@@ -22,7 +31,9 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
                 onClick={onClose}
                 aria-label="Закрити діалог"
             />
-            <div className="modal__content">
+            <div
+                className={`modal__content${wide ? ' modal__content--wide' : ''}${fit ? ' modal__content--fit' : ''}`}
+            >
                 <div className="modal__header">
                     {title && <h2 className="modal__title">{title}</h2>}
                     <button
@@ -34,7 +45,7 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
                         ✕
                     </button>
                 </div>
-                <div className="modal__body">{children}</div>
+                <div className={`modal__body${fit ? ' modal__body--fit' : ''}`}>{children}</div>
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import './ContactsPage.scss'
 
+import { SOCIAL_LINKS } from '../../shared/config/socialLinks'
 import { Breadcrumbs } from '../../shared/ui/Breadcrumbs'
 import { PageHero } from '../../shared/ui/PageHero'
 
@@ -27,13 +28,6 @@ const contactItems = [
         title: 'Години роботи',
         text: 'Пн–Пт: 9:00–18:00, Сб: 10:00–16:00',
     },
-]
-
-const socialLinks = [
-    { label: 'Facebook', href: 'https://www.facebook.com/estatehome' },
-    { label: 'Instagram', href: 'https://www.instagram.com/estatehome' },
-    { label: 'X', href: 'https://x.com/estatehome' },
-    { label: 'YouTube', href: 'https://www.youtube.com/@estatehome' },
 ]
 
 const MAP_EMBED_URL =
@@ -77,15 +71,17 @@ export function ContactsPage() {
                     <div className="contacts-page__socials">
                         <h2 className="contacts-page__socials-title">Стежте за нами</h2>
                         <div className="contacts-page__socials-list">
-                            {socialLinks.map(({ label, href }) => (
+                            {SOCIAL_LINKS.map(({ label, href, Icon }) => (
                                 <a
                                     key={label}
                                     className="contacts-page__social"
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={label}
+                                    title={label}
                                 >
-                                    {label}
+                                    <Icon />
                                 </a>
                             ))}
                         </div>

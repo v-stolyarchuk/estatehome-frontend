@@ -12,8 +12,8 @@ export const productsData: Product[] = [
             'Ручний обприскувач із регульованою форсункою для поливу, підживлення та обробки рослин. Корпус із міцного пластику, є запобіжний клапан.',
         price: 349,
         oldPrice: 429,
-        category: 'garden',
-        images: TEMPLATE_IMAGES,
+        category: 'garden-leisure',
+        images: ['pump-sprayer.jpg'],
         availability: 'in-stock',
         attributes: [
             { label: 'Об’єм', value: '5 л' },
@@ -33,8 +33,8 @@ export const productsData: Product[] = [
         description:
             'Декоративні ліхтарики на сонячних батареях автоматично вмикаються у темряві. Не потребують проводів, стійкі до дощу.',
         price: 599,
-        category: 'garden',
-        images: TEMPLATE_IMAGES,
+        category: 'garden-leisure',
+        images: ['sun-lightings.webp'],
         availability: 'in-stock',
         attributes: [
             { label: 'Кількість', value: '6 шт' },
@@ -54,7 +54,7 @@ export const productsData: Product[] = [
         price: 799,
         oldPrice: 999,
         category: 'auto',
-        images: TEMPLATE_IMAGES,
+        images: ['portable-car-vacuum.webp'],
         availability: 'in-stock',
         attributes: [
             { label: 'Живлення', value: 'Акумулятор, USB' },
@@ -73,7 +73,7 @@ export const productsData: Product[] = [
             'Місткий органайзер із трьома відділеннями та жорсткими стінками. У складеному вигляді майже не займає місця.',
         price: 449,
         category: 'auto',
-        images: TEMPLATE_IMAGES,
+        images: ['car-organizer.png'],
         availability: 'in-stock',
         attributes: [
             { label: 'Розмір', value: '50 × 32 × 30 см' },
@@ -90,7 +90,7 @@ export const productsData: Product[] = [
             'Ортопедичний лежак із високими бортиками та знімним чохлом, який можна прати. Підходить для собак середніх порід.',
         price: 649,
         category: 'pets',
-        images: TEMPLATE_IMAGES,
+        images: ['dog-bed.webp'],
         availability: 'in-stock',
         attributes: [
             { label: 'Розмір', value: '60 × 45 см' },
@@ -110,7 +110,7 @@ export const productsData: Product[] = [
             'Дерев’яна годівниця з покрівлею, що захищає корм від дощу. Легко кріпиться на гілку або кронштейн.',
         price: 229,
         category: 'pets',
-        images: TEMPLATE_IMAGES,
+        images: ['bird-feeder.jpg'],
         availability: 'in-stock',
         attributes: [
             { label: 'Матеріал', value: 'Дерево' },
@@ -127,7 +127,7 @@ export const productsData: Product[] = [
             'Годівниця-головоломка розвиває мисливський інстинкт і допомагає коту повільніше їсти. Основа не ковзає по підлозі.',
         price: 299,
         category: 'pets',
-        images: TEMPLATE_IMAGES,
+        images: ['cat-toy.webp'],
         availability: 'out-of-stock',
         attributes: [
             { label: 'Матеріал', value: 'Безпечний пластик' },
@@ -144,7 +144,7 @@ export const productsData: Product[] = [
             'Фломастери, пластилін, наліпки та заготовки для аплікацій у зручній валізці. Підходить для дітей від 4 років.',
         price: 399,
         category: 'kids',
-        images: TEMPLATE_IMAGES,
+        images: ['children-creative-kit.jpg'],
         availability: 'in-stock',
         attributes: [
             { label: 'Вік', value: 'Від 4 років' },
@@ -503,5 +503,406 @@ export const productsData: Product[] = [
         availability: 'in-stock',
         attributes: [],
         createdAt: '2026-10-21',
+    },
+    {
+        id: 'p-034',
+        slug: 'nabir-skliannykh-konteineriv-5-sht',
+        sku: 'KIT-0001',
+        title: 'Набір скляних контейнерів для їжі, 5 шт',
+        description:
+            'Контейнери з жаростійкого скла та герметичними кришками. Підходять для зберігання, розігрівання в мікрохвильовій печі та миття в посудомийній машині.',
+        price: 689,
+        oldPrice: 799,
+        category: 'home-kitchen',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Кількість', value: '5 шт' },
+            { label: 'Матеріал', value: 'Жаростійке скло' },
+            { label: 'Кришки', value: 'Герметичні, пластик' },
+        ],
+        badges: ['bestseller'],
+        rating: 4.8,
+        reviewsCount: 64,
+        createdAt: '2026-09-18',
+    },
+    {
+        id: 'p-035',
+        slug: 'obertovyi-orhanayzer-dlia-spetsii',
+        sku: 'KIT-0002',
+        title: 'Поворотний органайзер для спецій, 12 баночок',
+        description:
+            'Підставка, що обертається, з дванадцятьма баночками та кришками-дозаторами. Тримає спеції під рукою та економить місце на кухонній стільниці.',
+        price: 479,
+        category: 'home-kitchen',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Баночок', value: '12 шт' },
+            { label: 'Висота', value: '22 см' },
+            { label: 'Матеріал', value: 'Скло, пластик' },
+        ],
+        createdAt: '2026-10-22',
+    },
+
+    // ── Гаджети та автономність ──────────────────────────────────
+    {
+        id: 'p-036',
+        slug: 'kempinhovyi-lihtar-na-akumuliatori',
+        sku: 'GDG-0001',
+        title: 'Кемпінговий ліхтар на акумуляторі з USB-C',
+        description:
+            'Підвісний ліхтар із трьома режимами яскравості та складною ручкою. Корисний для походів, дачі та на випадок відключення світла.',
+        price: 549,
+        category: 'gadgets-energy',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Заряджання', value: 'USB-C' },
+            { label: 'Режимів', value: '3' },
+            { label: 'Захист', value: 'IPX4' },
+        ],
+        badges: ['new'],
+        createdAt: '2026-11-03',
+    },
+    {
+        id: 'p-037',
+        slug: 'pauerbank-20000-mah-z-lihtarykom',
+        sku: 'GDG-0002',
+        title: 'Павербанк 20 000 мА·год із ліхтариком',
+        description:
+            'Місткий павербанк з двома виходами USB-A і портом USB-C для швидкого заряджання. Вбудований ліхтарик стане в пригоді під час прогулянки чи поїздки.',
+        price: 899,
+        oldPrice: 1049,
+        category: 'gadgets-energy',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Ємність', value: '20 000 мА·год' },
+            { label: 'Порти', value: 'USB-C, 2 × USB-A' },
+            { label: 'Додатково', value: 'Ліхтарик' },
+        ],
+        badges: ['bestseller'],
+        rating: 4.6,
+        reviewsCount: 118,
+        createdAt: '2026-08-27',
+    },
+
+    // ── Автотовари ───────────────────────────────────────────────
+    {
+        id: 'p-038',
+        slug: 'avtotrymach-dlia-telefona-na-deflektor',
+        sku: 'AUT-0003',
+        title: 'Автотримач для телефона на дефлектор',
+        description:
+            'Компактний тримач із надійним затискачем, що підходить до смартфонів різних розмірів. Кріпиться на дефлектор обдуву без інструментів.',
+        price: 219,
+        category: 'auto',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Кріплення', value: 'Дефлектор' },
+            { label: 'Ширина телефона', value: '60–90 мм' },
+        ],
+        createdAt: '2026-09-30',
+    },
+    {
+        id: 'p-039',
+        slug: 'universalni-humovi-kylymky-v-salon-4-sht',
+        sku: 'AUT-0004',
+        title: 'Універсальні гумові килимки в салон, 4 шт',
+        description:
+            'Набір килимків із високими бортами, що утримують воду та бруд. Легко миються, не вбирають вологу, добре тримаються на підлозі.',
+        price: 649,
+        oldPrice: 749,
+        category: 'auto',
+        images: TEMPLATE_IMAGES,
+        availability: 'on-order',
+        attributes: [
+            { label: 'Комплект', value: '4 шт' },
+            { label: 'Матеріал', value: 'Гума' },
+            { label: 'Тип', value: 'Універсальні' },
+        ],
+        createdAt: '2026-10-08',
+    },
+
+    // ── Краса та здоров’я ────────────────────────────────────────
+    {
+        id: 'p-040',
+        slug: 'masazhnyi-roler-dlia-oblychchia-nefryt',
+        sku: 'BTY-0001',
+        title: 'Масажний ролер для обличчя з нефриту',
+        description:
+            'Двосторонній ролер з натурального каменю для щоденного масажу обличчя. Приємно холодить шкіру та допомагає розслабитися після робочого дня.',
+        price: 349,
+        category: 'beauty-health',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Матеріал', value: 'Нефрит' },
+            { label: 'Довжина', value: '14 см' },
+        ],
+        rating: 4.5,
+        reviewsCount: 29,
+        createdAt: '2026-07-21',
+    },
+    {
+        id: 'p-041',
+        slug: 'dzerkalo-dlia-makiiazhu-z-led-pidsvitkoiu',
+        sku: 'BTY-0002',
+        title: 'Дзеркало для макіяжу з LED-підсвіткою',
+        description:
+            'Настільне дзеркало з регульованою яскравістю підсвітки та сенсорним керуванням. Зручне для макіяжу вдома та в подорожі.',
+        price: 599,
+        oldPrice: 749,
+        category: 'beauty-health',
+        images: TEMPLATE_IMAGES,
+        availability: 'out-of-stock',
+        attributes: [
+            { label: 'Живлення', value: 'USB' },
+            { label: 'Діаметр', value: '20 см' },
+            { label: 'Режимів світла', value: '3' },
+        ],
+        createdAt: '2026-06-14',
+    },
+
+    // ── Товари для тварин ────────────────────────────────────────
+    {
+        id: 'p-042',
+        slug: 'kylymok-dlia-povilnoho-hoduvannia-tvaryn',
+        sku: 'PET-0004',
+        title: 'Силіконовий килимок для повільного годування',
+        description:
+            'Рельєфний килимок, у складках якого ховаються ласощі або корм. Вповільнює їжу, займає улюбленця та допомагає уникнути нудьги.',
+        price: 259,
+        category: 'pets',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Матеріал', value: 'Харчовий силікон' },
+            { label: 'Діаметр', value: '28 см' },
+        ],
+        badges: ['new'],
+        createdAt: '2026-11-06',
+    },
+    {
+        id: 'p-043',
+        slug: 'iihrashka-vudka-dlia-kotiv-z-perjam',
+        sku: 'PET-0005',
+        title: 'Іграшка-вудка для котів із пір’ям',
+        description:
+            'Телескопічна вудка зі змінними насадками для активних ігор. Розвиває мисливський інстинкт і допомагає коту залишатися в формі.',
+        price: 189,
+        category: 'pets',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Довжина', value: 'До 90 см' },
+            { label: 'Насадок', value: '4 шт' },
+        ],
+        rating: 4.7,
+        reviewsCount: 52,
+        createdAt: '2026-05-30',
+    },
+
+    // ── Дитячі товари ────────────────────────────────────────────
+    {
+        id: 'p-044',
+        slug: 'nastilna-hra-memo-z-tvarynamy',
+        sku: 'KID-0003',
+        title: 'Настільна гра «Мемо» з тваринами, 48 карток',
+        description:
+            'Розвиваюча гра на увагу та пам’ять із яскравими картками. Підходить для ігор удвох і всією родиною.',
+        price: 299,
+        category: 'kids',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Вік', value: 'Від 3 років' },
+            { label: 'Карток', value: '48' },
+            { label: 'Гравців', value: '2–4' },
+        ],
+        createdAt: '2026-10-12',
+    },
+    {
+        id: 'p-045',
+        slug: 'kylymok-dlia-maliuvannia-vodoiu',
+        sku: 'KID-0004',
+        title: 'Килимок для малювання водою з маркером',
+        description:
+            'Багаторазовий килимок, на якому малюють водяним маркером: малюнки висихають, а килимок можна використовувати знову. Без фарб і плям.',
+        price: 329,
+        oldPrice: 389,
+        category: 'kids',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Вік', value: 'Від 2 років' },
+            { label: 'Розмір', value: '50 × 35 см' },
+            { label: 'Комплект', value: 'Килимок, маркер' },
+        ],
+        badges: ['new'],
+        createdAt: '2026-11-09',
+    },
+
+    // ── Декор та освітлення ──────────────────────────────────────
+    {
+        id: 'p-046',
+        slug: 'nastilna-led-lampa-z-rehuliuvanniam-yaskravosti',
+        sku: 'HDC-0023',
+        title: 'Настільна LED-лампа з регулюванням яскравості',
+        description:
+            'Лампа з гнучким тримачем, трьома режимами кольору світла та плавним регулюванням яскравості. Підходить для роботи, навчання та читання.',
+        price: 499,
+        category: 'home-decor',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Живлення', value: 'USB' },
+            { label: 'Режимів світла', value: '3' },
+            { label: 'Тримач', value: 'Гнучкий' },
+        ],
+        rating: 4.7,
+        reviewsCount: 33,
+        createdAt: '2026-09-09',
+    },
+    {
+        id: 'p-047',
+        slug: 'aromatychni-svichky-soievi-3-sht',
+        sku: 'HDC-0024',
+        title: 'Ароматичні свічки з соєвого воску, 3 шт',
+        description:
+            'Набір невеликих свічок у скляних баночках із м’якими затишними ароматами. Чудово підходить як подарунок і для створення атмосфери вдома.',
+        price: 389,
+        category: 'home-decor',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Кількість', value: '3 шт' },
+            { label: 'Матеріал', value: 'Соєвий віск' },
+            { label: 'Час горіння', value: 'До 25 год кожна' },
+        ],
+        badges: ['bestseller'],
+        createdAt: '2026-10-15',
+    },
+
+    // ── Сад, город та пікнік ─────────────────────────────────────
+    {
+        id: 'p-048',
+        slug: 'skladanyi-kylymok-dlia-piknika-150x180',
+        sku: 'GRD-0003',
+        title: 'Складаний килимок для пікніка 150 × 180 см',
+        description:
+            'Широкий килимок із водостійкою основою для пікніка, пляжу чи відпочинку в парку. Складається в компактну сумку з ручкою.',
+        price: 429,
+        oldPrice: 519,
+        category: 'garden-leisure',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Розмір', value: '150 × 180 см' },
+            { label: 'Основа', value: 'Водостійка' },
+        ],
+        createdAt: '2026-04-25',
+    },
+    {
+        id: 'p-049',
+        slug: 'sadovi-rukavychky-nitryl-6-par',
+        sku: 'GRD-0004',
+        title: 'Садові рукавички з нітриловим покриттям, 6 пар',
+        description:
+            'Міцні рукавички для роботи в саду та на городі. Нітрилове покриття захищає від вологи та бруду, тканинна основа дихає.',
+        price: 199,
+        category: 'garden-leisure',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Кількість', value: '6 пар' },
+            { label: 'Покриття', value: 'Нітрил' },
+            { label: 'Розмір', value: 'L' },
+        ],
+        createdAt: '2026-03-12',
+    },
+
+    // ── Інструменти ──────────────────────────────────────────────
+    {
+        id: 'p-050',
+        slug: 'budivelnyi-riven-z-mahnitom-40-sm',
+        sku: 'TLS-0002',
+        title: 'Будівельний рівень із магнітом, 40 см',
+        description:
+            'Алюмінієвий рівень із трьома капсулами та магнітною гранню для роботи з металевими поверхнями. Компактний і зручний для побутових ремонтів.',
+        price: 259,
+        category: 'tools',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Довжина', value: '40 см' },
+            { label: 'Матеріал', value: 'Алюміній' },
+            { label: 'Капсул', value: '3' },
+        ],
+        createdAt: '2026-02-17',
+    },
+
+    // ── Спорт, туризм та хобі ────────────────────────────────────
+    {
+        id: 'p-051',
+        slug: 'kylymok-dlia-yohy-6-mm',
+        sku: 'SPT-0001',
+        title: 'Килимок для йоги та фітнесу, 6 мм',
+        description:
+            'Нековзний килимок середньої товщини для йоги, пілатесу та домашніх тренувань. Йде в комплекті з ремінцем для перенесення.',
+        price: 459,
+        category: 'hobby-sports',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Товщина', value: '6 мм' },
+            { label: 'Розмір', value: '183 × 61 см' },
+            { label: 'Комплект', value: 'Ремінець' },
+        ],
+        rating: 4.6,
+        reviewsCount: 47,
+        createdAt: '2026-01-23',
+    },
+    {
+        id: 'p-052',
+        slug: 'almazna-mozaika-30x40-sm',
+        sku: 'SPT-0002',
+        title: 'Алмазна мозаїка 30 × 40 см',
+        description:
+            'Набір для творчості на підрамнику: кольорові стрази, стилус і клей-ковпачок. Розслабляє та допомагає відволіктися від повсякденних справ.',
+        price: 379,
+        category: 'hobby-sports',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Розмір', value: '30 × 40 см' },
+            { label: 'Основа', value: 'Підрамник' },
+            { label: 'Вік', value: 'Від 12 років' },
+        ],
+        createdAt: '2026-10-26',
+    },
+
+    // ── Сезонні товари ───────────────────────────────────────────
+    {
+        id: 'p-053',
+        slug: 'nabir-novorichnykh-prykras-24-sht',
+        sku: 'SEA-0002',
+        title: 'Набір новорічних ялинкових прикрас, 24 шт',
+        description:
+            'Яскраві небиткі кульки різних розмірів і фактур для оздоблення ялинки. Зручна упаковка допоможе зберігати набір до наступного року.',
+        price: 349,
+        oldPrice: 429,
+        category: 'seasonal',
+        images: TEMPLATE_IMAGES,
+        availability: 'in-stock',
+        attributes: [
+            { label: 'Кількість', value: '24 шт' },
+            { label: 'Матеріал', value: 'Небиткий пластик' },
+            { label: 'Діаметр', value: '6 см' },
+        ],
+        badges: ['new', 'bestseller'],
+        createdAt: '2026-11-05',
     },
 ]

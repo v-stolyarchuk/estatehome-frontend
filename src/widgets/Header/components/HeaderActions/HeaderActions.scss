@@ -10,15 +10,17 @@
     /*** ELEMENTS ***/
 
     &__link {
-        display: inline-block;
-        padding: 0.5rem 1rem;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
         border: 1px solid $color-line;
         border-radius: 999px;
         background-color: $color-surface;
         color: $color-ink;
+        font-size: 1.2rem;
         text-decoration: none;
-        font-size: 0.85rem;
-        font-weight: 600;
         transition:
             border-color 0.2s ease,
             background-color 0.2s ease,
@@ -40,5 +42,23 @@
             color: $color-moss;
             box-shadow: 0 0.25rem 0.75rem color-mix(in srgb, $color-moss 15%, transparent);
         }
+    }
+
+    &__badge {
+        position: absolute;
+        top: -0.3rem;
+        right: -0.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1.15rem;
+        height: 1.15rem;
+        padding: 0 0.25rem;
+        border-radius: 999px;
+        background-color: $color-terracotta;
+        color: $color-surface;
+        font-size: 0.65rem;
+        font-weight: 700;
+        line-height: 1;
     }
 }

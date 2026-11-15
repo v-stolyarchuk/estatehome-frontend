@@ -8,71 +8,197 @@
     overflow: hidden;
     border-radius: 0.5rem;
 
-    /*** VIEWPORT & TRACK ***/
-
-    &__viewport {
-        overflow: hidden;
-    }
-
-    &__track {
-        display: flex;
-        transition: transform 0.4s ease;
-    }
+    /*** SLIDE THEMES ***/
 
     &__slide {
-        flex: 0 0 100%;
-        min-width: 100%;
-
-        /*** THEMES ***/
-
         &--primary {
             --slide-accent: #{$color-moss};
-
-            background-color: color-mix(in srgb, $color-moss 8%, $color-surface);
         }
 
         &--info {
             --slide-accent: #{$color-terracotta};
-
-            background-color: color-mix(in srgb, $color-terracotta 8%, $color-surface);
         }
 
         &--success {
             --slide-accent: #{$color-success};
-
-            background-color: color-mix(in srgb, $color-success 8%, $color-surface);
         }
     }
 
-    /*** ARROWS ***/
+    /*** SLICK ARROWS ***/
 
-    &__arrow {
+    .slick-arrow {
+        // Позиціонування задаємо самі, щоб не залежати від slick-theme.css
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
-        width: 2.5rem;
-        height: 2.5rem;
-        border: none;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        border: 1px solid color-mix(in srgb, $color-surface 35%, transparent);
         border-radius: 50%;
-        background-color: $color-surface;
-        color: $color-ink;
-        font-size: 1.5rem;
-        line-height: 1;
+        background-color: transparent;
+        color: color-mix(in srgb, $color-surface 90%, transparent);
+        font-size: 0;
+        line-height: 0;
         cursor: pointer;
-        box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 20%);
-        transition: opacity 0.2s ease;
+        backdrop-filter: blur(4px);
+        box-shadow: none;
+        transform: translateY(-50%);
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        // Шеврон малюємо рамками: не залежить від шрифтів і гліфів.
+        // Абсолютне центрування, бо slick виставляє кнопці inline display: block
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-top: 2px solid currentcolor;
+            border-right: 2px solid currentcolor;
+            opacity: 1;
+        }
+
+        // :focus після кліку мишею slick-theme робить колір прозорим,
+        // тому задаємо його явно
+        &:focus {
+            background-color: transparent;
+            color: color-mix(in srgb, $color-surface 90%, transparent);
+        }
 
         &:hover {
-            opacity: 0.85;
+            border-color: $color-surface;
+            background-color: color-mix(in srgb, $color-surface 15%, transparent);
+            color: $color-surface;
+
+            // translateY обов’язково повторюємо, інакше стрілка «стрибне» вниз
+            transform: translateY(-50%) scale(1.1);
         }
 
-        &--prev {
-            left: 0.75rem;
+        &:focus-visible {
+            outline: 2px solid $color-surface;
+            outline-offset: 2px;
         }
 
-        &--next {
-            right: 0.75rem;
+        @include onMobile {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+    }
+
+    .slick-prev {
+        left: 1rem;
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(-135deg);
+        }
+
+        @include onMobile {
+            left: 0.5rem;
+        }
+    }
+
+    .slick-next {
+        right: 1rem;
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        @include onMobile {
+            right: 0.5rem;
+        }
+    }
+
+    /*** SLICK DOTS ***/
+
+    // react-slick додає ul inline-стиль display: block, тому flex тут не працює:
+    // вирівнюємо через inline-block + vertical-align
+    .slick-dots {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        width: auto;
+        margin: 0;
+        padding: 0.4rem 0.9rem;
+        border-radius: 999px;
+        background-color: color-mix(in srgb, $color-ink 35%, transparent);
+        line-height: 0;
+        list-style: none;
+        backdrop-filter: blur(6px);
+        transform: translateX(-50%);
+
+        @include onMobile {
+            bottom: 0.75rem;
+        }
+
+        li {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            margin: 0 0.125rem;
+            padding: 0;
+            vertical-align: middle;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: auto;
+                padding: 0.3rem;
+                border: none;
+                background: transparent;
+                font-size: 0;
+                line-height: 0;
+                cursor: pointer;
+
+                // Скидаємо крапку-символ зі slick-theme (content: '•',
+                // position: absolute, шрифт slick) і малюємо власну
+                &::before {
+                    content: '';
+                    position: static;
+                    display: block;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    border-radius: 999px;
+                    background-color: $color-surface;
+                    color: transparent;
+                    font-size: 0;
+                    line-height: 0;
+                    opacity: 0.55;
+                    transition:
+                        width 0.25s ease,
+                        opacity 0.25s ease,
+                        background-color 0.25s ease;
+                }
+
+                &:hover::before {
+                    opacity: 0.9;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid $color-surface;
+                    outline-offset: 2px;
+                    border-radius: 999px;
+                }
+            }
+
+            &.slick-active button::before {
+                width: 1.4rem;
+                background-color: $color-brass;
+                opacity: 1;
+            }
         }
     }
 }

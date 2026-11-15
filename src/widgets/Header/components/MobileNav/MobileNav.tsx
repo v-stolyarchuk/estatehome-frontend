@@ -1,16 +1,12 @@
 import './MobileNav.scss'
 
 import { useState } from 'react'
+import { FiMenu, FiX } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom'
 
-const navItems = [
-    { to: '/', label: 'Головна' },
-    { to: '/catalog', label: 'Каталог' },
-    { to: '/blog', label: 'Блог' },
-    { to: '/contacts', label: 'Контакти' },
-    { to: '/favourites', label: 'Обране' },
-    { to: '/cart', label: 'Кошик' },
-]
+import { MOBILE_EXTRA_ITEMS, NAV_ITEMS } from '../../../../shared/config/navigation'
+
+const navItems = [...NAV_ITEMS, ...MOBILE_EXTRA_ITEMS]
 
 export const MobileNav = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -24,9 +20,7 @@ export const MobileNav = () => {
                 aria-label={isOpen ? 'Закрити меню' : 'Відкрити меню'}
                 onClick={() => setIsOpen((prev) => !prev)}
             >
-                <span className="mobile-nav__burger-line" />
-                <span className="mobile-nav__burger-line" />
-                <span className="mobile-nav__burger-line" />
+                {isOpen ? <FiX /> : <FiMenu />}
             </button>
 
             <nav className="mobile-nav__panel" aria-hidden={!isOpen}>

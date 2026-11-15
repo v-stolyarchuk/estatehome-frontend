@@ -23,6 +23,8 @@ export const SliderSlide = ({
 }: SliderSlideProps) => {
     return (
         <div className="slider-slide">
+            <img className="slider-slide__image" src={image} alt="" />
+            <div className="slider-slide__overlay" aria-hidden="true" />
             <div className="slider-slide__content">
                 {badge && <span className="slider-slide__badge">{badge}</span>}
                 <h2 className="slider-slide__title">{title}</h2>
@@ -31,9 +33,6 @@ export const SliderSlide = ({
                 <Button to={ctaTo} className="slider-slide__cta">
                     {ctaLabel}
                 </Button>
-            </div>
-            <div className="slider-slide__media">
-                <img className="slider-slide__image" src={image} alt="" />
             </div>
         </div>
     )

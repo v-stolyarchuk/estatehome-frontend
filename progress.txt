@@ -33,3 +33,35 @@
 15.11 - Documented deploy rule in AGENTS.md: push to main triggers GitHub Pages deploy
 15.11 - Fixed deploy: Actions blocked by account billing lock; switched to gh-pages branch deploy (build locally, push dist), documented in AGENTS.md, workflow set to manual-only
 15.11 - Added 21 poster products (p-013..p-033, home-decor) to productsData; switched product image URLs to relative paths so they work on GitHub Pages subpath
+15.11 - Home slider now uses room/bath/kitchen slide images from public/images/home-slider
+15.11 - Fixed slider images hidden on desktop: SliderSlide media used onTablet range mixin (768-1023px only), added onDesktop display
+15.11 - Header cart/favourites links and mobile burger now use react-icons (Feather); installed react-icons@5.7.0
+15.11 - Fixed mobile horizontal scroll: added global box-sizing border-box reset (container was 100% width + padding = overflow)
+15.11 - Home categories now a scroll-snap carousel (shared Slider) with react-icons per category
+15.11 - Blog page: react-icons post icons, card hover polish, modal with full post content on 'Читати далі'; Modal widened to 640px
+15.11 - MainSlider migrated to react-slick (autoplay, arrows, dots); slide images now absolute full-bleed backgrounds with contrast overlay, visible on mobile; removed SliderSettings
+15.11 - Removed categories carousel from HomePage; deleted unused shared/ui/Slider
+15.11 - Filled heart/cart icons on header when on favourites/cart pages
+15.11 - Removed custom slick arrow/dot styles from MainSlider (react-slick defaults now apply)
+15.11 - Restyled MainSlider arrows/dots: visible arrows, pill-shaped active dot
+15.11 - Fixed MainSlider controls: hid slick arrow text, compact centered dots pill
+15.11 - Centered slider arrow chevrons via absolute positioning (::before)
+15.11 - Minimalist slider arrows: smaller, transparent, white chevrons
+15.11 - Added favourites/cart count badges to header icons
+15.11 - ContactsPage socials as react-icons brand icons, added Telegram
+15.11 - Added ProductGallery widget: swipeable main image + clickable thumbs on product page
+15.11 - ProductGallery: fade transition on image switch, click opens zoom modal
+15.11 - Zoom modal gallery: swipe + arrows to browse all product images
+15.11 - Product zoom modal: fit-to-viewport no-scroll layout, slower 0.6s fade
+15.11 - Fit modal: fixed 92vh height so gallery image fills all space below title
+15.11 - Footer socials as icon buttons (incl. Telegram), matching contacts page
+15.11 - CategoriesNav: horizontal scrollable pill strip on mobile
+15.11 - CategoriesNav: grid layout showing all categories, no scrolling
+15.11 - CategoriesNav restyled: auto-fill card grid, moss active state
+15.11 - Moved CategoriesNav to HomePage; category click navigates to /catalog?category=slug
+15.11 - Replaced categories model with new taxonomy (11 categories, subcategories, images); updated product slugs and nav sources; removed cat.txt
+15.11 - Added CategoryMenu accordion on HomePage; tag click opens catalog with ?q= search
+15.11 - CategoryMenu: subcategories as hint list, tags show on category open
+15.11 - Single-sourced social links and nav items into shared/config
+15.11 - Fixed category slugs in 20 new products (gadgets→gadgets-energy, sport-hobby→hobby-sports)
+15.11 - Wired 8 real product images (moved from not-prepared, mapped to p-001..p-008)

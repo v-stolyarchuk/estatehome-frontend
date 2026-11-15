@@ -1,0 +1,154 @@
+@use '../../../../shared/styles/main' as *;
+
+.category-menu {
+    /*** BASE ***/
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    /*** CATEGORY ***/
+
+    &__category {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border: 1px solid $color-line;
+        border-radius: 0.75rem;
+        background-color: $color-surface;
+        color: $color-ink;
+        font: inherit;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-align: left;
+        cursor: pointer;
+        transition:
+            border-color 0.2s ease,
+            background-color 0.2s ease;
+
+        &:hover {
+            border-color: $color-moss;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-moss;
+            outline-offset: 2px;
+        }
+
+        &--open {
+            border-color: $color-moss;
+            background-color: color-mix(in srgb, $color-moss 6%, $color-surface);
+        }
+    }
+
+    &__chevron {
+        flex: 0 0 auto;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-top: 2px solid $color-ink-soft;
+        border-right: 2px solid $color-ink-soft;
+        transform: rotate(45deg);
+        transition: transform 0.2s ease;
+    }
+
+    &__category--open &__chevron {
+        border-color: $color-moss;
+        transform: rotate(225deg);
+    }
+
+    /*** SUBCATEGORIES ***/
+
+    &__sublist {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 0.25rem 0 0.5rem 0.75rem;
+        padding: 0.75rem 1rem 0.75rem 1.25rem;
+        border-left: 2px solid $color-line;
+    }
+
+    &__sublist-title {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $color-ink-soft;
+    }
+
+    &__subs {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            color: $color-ink-soft;
+            font-size: 0.85rem;
+            line-height: 1.4;
+
+            &::before {
+                content: '·';
+                margin-right: 0.4rem;
+                color: $color-moss;
+                font-weight: 700;
+            }
+        }
+    }
+
+    /*** TAGS ***/
+
+    &__tags {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        padding: 0.75rem;
+        background-color: $color-plaster;
+        border-radius: 0.5rem;
+    }
+
+    &__tags-title {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $color-ink-soft;
+    }
+
+    &__tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    &__tag {
+        padding: 0.35rem 0.8rem;
+        border: 1px solid $color-moss;
+        border-radius: 999px;
+        background-color: $color-surface;
+        color: $color-moss;
+        font: inherit;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+
+        &:hover {
+            background-color: $color-moss;
+            color: $color-surface;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-moss;
+            outline-offset: 2px;
+        }
+    }
+}

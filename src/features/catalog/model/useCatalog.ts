@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 
 import { useAppSelector } from '../../../app/hooks'
-import { getCategoryLabel } from '../../../entities/category'
+import { CATEGORIES, getCategoryLabel } from '../../../entities/category'
 import type { Product } from '../../../entities/product'
 import { selectProducts } from '../../../entities/product'
 import type { CatalogSort } from './catalog.types'
@@ -14,16 +14,13 @@ const SORT_OPTIONS: Record<Exclude<CatalogSort, 'featured'>, (a: Product, b: Pro
     'name-desc': (a, b) => b.title.localeCompare(a.title),
 }
 
-export const useCatalog = () => {
+export const useCatalog = (initialCategories: string[] = [], initialQuery = '') => {
     const products = useAppSelector(selectProducts)
-    const [query, setQuery] = useState('')
-    const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+    const [query, setQuery] = useState(initialQuery)
+    const [selectedCategories, setSelectedCategories] = useState<string[]>(initialCategories)
     const [sortBy, setSortBy] = useState<CatalogSort>('featured')
 
-    const categories = useMemo(
-        () => [...new Set(products.map((product) => product.category))],
-        [products],
-    )
+    const categories = useMemo(() => CATEGORIES.map((category) => category.slug), [])
 
     const toggleCategory = (category: string) => {
         setSelectedCategories((prev) =>

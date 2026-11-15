@@ -1,12 +1,11 @@
 import './HomePage.scss'
 
 import { useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-import { useAppSelector } from '../../app/hooks'
 import { CATEGORIES } from '../../entities/category'
-import { selectProducts } from '../../entities/product'
-import { pluralize } from '../../shared/lib'
+import { CategoriesNav } from '../../features/catalog/navigation/CategoriesNav'
+import { CategoryMenu } from '../../features/catalog/navigation/CategoryMenu'
 import { Button } from '../../shared/ui/Button'
 import { PageHero } from '../../shared/ui/PageHero'
 import { MainSlider } from '../../widgets/MainSlider'
@@ -30,17 +29,12 @@ const features = [
 ]
 
 export const HomePage = () => {
-    const products = useAppSelector(selectProducts)
+    const navigate = useNavigate()
+    const categories = useMemo(() => CATEGORIES.map((category) => category.slug), [])
 
-    const categories = useMemo(
-        () =>
-            CATEGORIES.map(({ slug, label }) => ({
-                slug,
-                label,
-                count: products.filter((product) => product.category === slug).length,
-            })),
-        [products],
-    )
+    const handleSelectCategory = (category: string | null) => {
+        navigate(category ? `/catalog?category=${category}` : '/catalog')
+    }
 
     return (
         <div className="home-page">
@@ -59,6 +53,14 @@ export const HomePage = () => {
                 </div>
             </PageHero>
 
+            <CategoriesNav
+                categories={categories}
+                selectedCategories={[]}
+                onSelect={handleSelectCategory}
+            />
+
+            <CategoryMenu />
+
             <section className="home-page__features">
                 {features.map(({ icon, title, text }) => (
                     <article key={title} className="home-page__feature">
@@ -67,23 +69,6 @@ export const HomePage = () => {
                         <p className="home-page__feature-text">{text}</p>
                     </article>
                 ))}
-            </section>
-
-            <section className="home-page__categories">
-                <h2 className="home-page__section-title">Популярні категорії</h2>
-                <div className="home-page__category-list">
-                    {categories.map(({ slug, label, count }) => (
-                        <Link key={slug} to="/catalog" className="home-page__category">
-                            <span className="home-page__category-name">{label}</span>
-                            <span className="home-page__category-count">
-                                {count} {pluralize(count, ['товар', 'товари', 'товарів'])}
-                            </span>
-                            <span className="home-page__category-arrow" aria-hidden="true">
-                                →
-                            </span>
-                        </Link>
-                    ))}
-                </div>
             </section>
 
             <section className="home-page__cta">

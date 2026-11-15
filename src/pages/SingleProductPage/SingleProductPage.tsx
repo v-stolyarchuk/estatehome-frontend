@@ -1,13 +1,11 @@
 import './SingleProductPage.scss'
 
-import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useAppSelector } from '../../app/hooks'
 import { getCategoryLabel } from '../../entities/category'
 import type { ProductAttribute } from '../../entities/product'
 import {
-    getProductImageUrl,
     PRODUCT_AVAILABILITY_LABELS,
     PRODUCT_BADGE_LABELS,
     selectProducts,
@@ -17,12 +15,12 @@ import { FavouriteButton } from '../../features/favourites/ui/FavouriteButton'
 import { formatPrice, pluralize } from '../../shared/lib'
 import { Breadcrumbs } from '../../shared/ui/Breadcrumbs'
 import { EmptyState } from '../../shared/ui/EmptyState'
+import { ProductGallery } from '../../widgets/ProductGallery'
 
 export function SingleProductPage() {
     const { slug } = useParams()
     const products = useAppSelector(selectProducts)
     const product = products.find((item) => item.slug === slug)
-    const [activeImage, setActiveImage] = useState(0)
 
     if (!product) {
         return (
@@ -42,10 +40,6 @@ export function SingleProductPage() {
             ? Math.round((1 - product.price / product.oldPrice) * 100)
             : null
 
-    const handleThumbClick = (index: number) => {
-        setActiveImage(index)
-    }
-
     return (
         <section className="single-product-page">
             <Breadcrumbs
@@ -57,36 +51,7 @@ export function SingleProductPage() {
             />
 
             <div className="single-product-page__layout">
-                <div className="single-product-page__gallery">
-                    <div className="single-product-page__main-image">
-                        {product.images.length > 0 ? (
-                            <img
-                                src={getProductImageUrl(product, activeImage)}
-                                alt={product.title}
-                            />
-                        ) : (
-                            <span className="single-product-page__placeholder">
-                                {getCategoryLabel(product.category)}
-                            </span>
-                        )}
-                    </div>
-                    {product.images.length > 1 && (
-                        <div className="single-product-page__thumbs">
-                            {product.images.map((image, index) => (
-                                <button
-                                    key={image}
-                                    type="button"
-                                    className={`single-product-page__thumb${index === activeImage ? ' single-product-page__thumb--active' : ''}`}
-                                    onClick={() => handleThumbClick(index)}
-                                    aria-label={`Показати зображення ${index + 1}`}
-                                    aria-pressed={index === activeImage}
-                                >
-                                    <img src={getProductImageUrl(product, index)} alt="" />
-                                </button>
-                            ))}
-                        </div>
-                    )}
-                </div>
+                <ProductGallery product={product} />
 
                 <div className="single-product-page__info">
                     <div className="single-product-page__badges">
