@@ -70,3 +70,4 @@
 15.11 - Added checkout flow: /checkout page with contact/delivery form, order summary, confirmation screen; cart button now navigates there
 15.11 - Removed dead code: Maybe/WithId types, selectCategory, addProduct, setTheme export, shared/assets
 15.11 - Mobile header compact sizing, catalog reset wrap fix, no horizontal scroll at 320px
+15.11 - CategoriesList with icons on home page, catalog pagination, global smooth scroll-to-top on route change

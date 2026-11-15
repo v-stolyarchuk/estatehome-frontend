@@ -60,7 +60,11 @@ export const CatalogPage = () => {
                 onToggle={toggleCategory}
             />
 
-            <CatalogList products={filteredProducts} query={query} />
+            <CatalogList
+                key={`${query}|${selectedCategories.join(',')}|${sortBy}`}
+                products={filteredProducts}
+                query={query}
+            />
         </section>
     )
 }

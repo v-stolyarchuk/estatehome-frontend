@@ -3,16 +3,22 @@
 .catalog-list {
     /*** BASE ***/
 
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1.25rem;
+    scroll-margin-top: 5.5rem;
 
-    @include onTablet {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /*** GRID ***/
 
-    @include onDesktop {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.25rem;
+
+        @include onTablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include onDesktop {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
     }
 }

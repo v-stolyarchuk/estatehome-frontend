@@ -12,18 +12,17 @@ import { SingleProductPage } from '../../pages/SingleProductPage'
 
 export interface AppRoute {
     path: string
-    title: string
     Component: ComponentType
 }
 
 export const routes: AppRoute[] = [
-    { path: '/', title: 'Головна', Component: HomePage },
-    { path: '/catalog', title: 'Каталог', Component: CatalogPage },
-    { path: '/product/:slug', title: 'Товар', Component: SingleProductPage },
-    { path: '/cart', title: 'Кошик', Component: CartPage },
-    { path: '/checkout', title: 'Оформлення замовлення', Component: CheckoutPage },
-    { path: '/favourites', title: 'Обране', Component: FavouritesPage },
-    { path: '/contacts', title: 'Контакти', Component: ContactsPage },
-    { path: '/blog', title: 'Блог', Component: BlogPage },
-    { path: '*', title: 'Сторінку не знайдено', Component: NotFoundPage },
+    { path: '/', Component: HomePage },
+    { path: '/catalog', Component: CatalogPage },
+    { path: '/product/:slug', Component: SingleProductPage },
+    { path: '/cart', Component: CartPage },
+    { path: '/checkout', Component: CheckoutPage },
+    { path: '/favourites', Component: FavouritesPage },
+    { path: '/contacts', Component: ContactsPage },
+    { path: '/blog', Component: BlogPage },
+    { path: '*', Component: NotFoundPage },
 ]

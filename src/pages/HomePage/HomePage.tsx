@@ -1,10 +1,6 @@
 import './HomePage.scss'
 
-import { useMemo } from 'react'
-import { useNavigate } from 'react-router-dom'
-
-import { CATEGORIES } from '../../entities/category'
-import { CategoriesNav } from '../../features/catalog/navigation/CategoriesNav'
+import { CategoriesList } from '../../features/catalog/navigation/CategoriesList'
 import { CategoryMenu } from '../../features/catalog/navigation/CategoryMenu'
 import { Button } from '../../shared/ui/Button'
 import { PageHero } from '../../shared/ui/PageHero'
@@ -29,13 +25,6 @@ const features = [
 ]
 
 export const HomePage = () => {
-    const navigate = useNavigate()
-    const categories = useMemo(() => CATEGORIES.map((category) => category.slug), [])
-
-    const handleSelectCategory = (category: string | null) => {
-        navigate(category ? `/catalog?category=${category}` : '/catalog')
-    }
-
     return (
         <div className="home-page">
             <MainSlider />
@@ -53,11 +42,7 @@ export const HomePage = () => {
                 </div>
             </PageHero>
 
-            <CategoriesNav
-                categories={categories}
-                selectedCategories={[]}
-                onSelect={handleSelectCategory}
-            />
+            <CategoriesList />
 
             <CategoryMenu />
 

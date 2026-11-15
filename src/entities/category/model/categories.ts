@@ -33,7 +33,7 @@ export const CATEGORIES: CategoryDef[] = [
     {
         slug: 'home-kitchen',
         label: 'Дім та кухня',
-        image: 'images/categories/home-kitchen.webp',
+        image: 'images/categories/category_home.png',
         badge: 'Хіт продажу',
         description:
             'Органайзери, кухонні помічники та товари для прибирання, які спрощують повсякденність.',
@@ -144,7 +144,7 @@ export const CATEGORIES: CategoryDef[] = [
     {
         slug: 'garden-leisure',
         label: 'Сад, город та пікнік',
-        image: 'images/categories/garden-leisure.webp',
+        image: 'images/categories/category_garden.png',
         badge: 'Сезонна пропозиція',
         description:
             'Сонячні ліхтарі, шланги для поливу та все для комфортного відпочинку на природі.',
@@ -165,7 +165,7 @@ export const CATEGORIES: CategoryDef[] = [
     {
         slug: 'tools',
         label: 'Інструменти',
-        image: 'images/categories/tools.webp',
+        image: 'images/categories/category_tools.png',
         badge: 'Хіт продажу',
         description: 'Шуруповерти, набори інструментів, лазерні рівні та робоче освітлення.',
         popularTags: ['Шуруповерт', 'Лазерний рівень', 'Набір інструментів', 'Налобний ліхтар'],
@@ -179,7 +179,7 @@ export const CATEGORIES: CategoryDef[] = [
     {
         slug: 'hobby-sports',
         label: 'Спорт, туризм та хобі',
-        image: 'images/categories/hobby-sports.webp',
+        image: 'images/categories/category_hobby_sports.png',
         badge: 'Для активних',
         description: 'Товари для домашнього фітнесу, кемпінгу, риболовлі та активного відпочинку.',
         popularTags: ['Килимок для йоги', 'Термос', 'Ящик для риболовлі', 'Еспандери'],

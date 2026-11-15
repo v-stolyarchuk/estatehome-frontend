@@ -1,0 +1,58 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.catalog-pagination {
+    /*** BASE ***/
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 2rem;
+
+    /*** ELEMENTS ***/
+
+    &__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5rem;
+        height: 2.5rem;
+        padding: 0 0.6rem;
+        border: 1px solid $color-line;
+        border-radius: 999px;
+        background-color: $color-surface;
+        color: $color-ink;
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+            border-color 0.2s ease,
+            background-color 0.2s ease,
+            color 0.2s ease;
+
+        /*** MODIFIERS ***/
+
+        &--active {
+            border-color: $color-moss;
+            background-color: $color-moss;
+            color: $color-on-accent;
+        }
+
+        /*** STATES ***/
+
+        &:hover {
+            border-color: $color-moss;
+            color: $color-moss;
+        }
+
+        &--active:hover {
+            color: $color-on-accent;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+    }
+}
