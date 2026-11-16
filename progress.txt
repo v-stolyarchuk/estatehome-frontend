@@ -80,3 +80,7 @@
 15.11 - Checkout mobile overflow fix (minmax grid + min-width), phone input mask +380
 15.11 - New-product badge (30 days), sale-only catalog filter, verified newest sort
 15.11 - SaleSection converted to react-slick slider (3/2/1 slides, arrows, dots)
+15.11 - Tech hygiene: per-route document.title, modal a11y (Escape/focus trap/scroll lock), strict TS, removed entities/partner, regenerated structure.txt
+16.11 - Added press kit product (p-054) from dropt.in.ua with 9 images to hobby-sports
+16.11 - Added potato chopper product (p-055) from dropt.in.ua, 9 gallery images, home-kitchen
+16.11 - Added steam cleaner product (p-056) from dropt.in.ua, 3 images, home-kitchen

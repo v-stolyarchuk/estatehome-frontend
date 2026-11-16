@@ -1,222 +1,412 @@
-
 frontend/
+├── .devin/
+│   ├── skills/
+│   │   ├── new-feature/
+│   │   │   └── SKILL.md
+│   │   ├── project-review/
+│   │   │   └── SKILL.md
+│   │   └── scaffold-component/
+│   │       └── SKILL.md
+│   └── config.local.json
+├── public/
+│   ├── images/
+│   │   ├── categories/
+│   │   │   ├── category_garden.png
+│   │   │   ├── category_hobby_sports.png
+│   │   │   ├── category_home.png
+│   │   │   └── category_tools.png
+│   │   ├── home-slider/
+│   │   │   ├── bath-slide.jpg
+│   │   │   ├── kitchen-slide.jpg
+│   │   │   └── room-slide.jpg
+│   │   ├── products/
+│   │   │   ├── bird-feeder.jpg
+│   │   │   ├── car-organizer.png
+│   │   │   ├── cat-toy.webp
+│   │   │   ├── children-creative-kit.jpg
+│   │   │   ├── dog-bed.webp
+│   │   │   ├── portable-car-vacuum.webp
+│   │   │   ├── poster-1.png
+│   │   │   ├── poster-10.jpg
+│   │   │   ├── poster-11.jpg
+│   │   │   ├── poster-12.jpg
+│   │   │   ├── poster-13.jpg
+│   │   │   ├── poster-14.jpg
+│   │   │   ├── poster-15.jpg
+│   │   │   ├── poster-16.jpg
+│   │   │   ├── poster-17.jpg
+│   │   │   ├── poster-18.jpg
+│   │   │   ├── poster-19.jpg
+│   │   │   ├── poster-2.jpg
+│   │   │   ├── poster-20.jpg
+│   │   │   ├── poster-21.jpg
+│   │   │   ├── poster-3.jpg
+│   │   │   ├── poster-4.jpg
+│   │   │   ├── poster-5.jpg
+│   │   │   ├── poster-6.jpg
+│   │   │   ├── poster-7.jpg
+│   │   │   ├── poster-8.jpg
+│   │   │   ├── poster-9.jpg
+│   │   │   ├── product-template1.jpg
+│   │   │   ├── product-template2.jpg
+│   │   │   ├── product-template3.jpg
+│   │   │   ├── pump-sprayer.jpg
+│   │   │   └── sun-lightings.webp
+│   │   └── home-decor1.webp
+│   ├── favicon.svg
+│   └── icons.svg
+├── scripts/
+│   └── copy-404.mjs
+├── src/
+│   ├── app/
+│   │   ├── hooks/
+│   │   │   ├── index.ts
+│   │   │   ├── useAppDispatch.ts
+│   │   │   └── useAppSelector.ts
+│   │   ├── providers/
+│   │   │   └── StoreProvider/
+│   │   │       ├── index.ts
+│   │   │       └── StoreProvider.tsx
+│   │   ├── router/
+│   │   │   ├── AppRouter.tsx
+│   │   │   ├── DocumentTitle.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── routes.ts
+│   │   │   └── ScrollToTop.tsx
+│   │   ├── store/
+│   │   │   ├── index.ts
+│   │   │   └── store.ts
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── assets/
+│   │   ├── hero.png
+│   │   ├── react.svg
+│   │   └── vite.svg
+│   ├── entities/
+│   │   ├── category/
+│   │   │   ├── model/
+│   │   │   │   ├── categories.ts
+│   │   │   │   └── category.types.ts
+│   │   │   ├── ui/
+│   │   │   │   └── CategoryItem/
+│   │   │   │       ├── CategoryItem.scss
+│   │   │   │       ├── CategoryItem.tsx
+│   │   │   │       └── index.ts
+│   │   │   └── index.ts
+│   │   ├── product/
+│   │   │   ├── model/
+│   │   │   │   ├── product.labels.ts
+│   │   │   │   ├── product.types.ts
+│   │   │   │   ├── product.utils.ts
+│   │   │   │   ├── productsData.ts
+│   │   │   │   └── productsSlice.ts
+│   │   │   ├── ui/
+│   │   │   │   └── ProductCard/
+│   │   │   │       ├── index.ts
+│   │   │   │       ├── ProductCard.scss
+│   │   │   │       └── ProductCard.tsx
+│   │   │   └── index.ts
+│   │   └── review/
+│   │       ├── model/
+│   │       │   ├── review.types.ts
+│   │       │   └── reviewsData.ts
+│   │       └── index.ts
+│   ├── features/
+│   │   ├── cart/
+│   │   │   ├── model/
+│   │   │   │   └── cartSlice.ts
+│   │   │   └── ui/
+│   │   │       ├── CartEmpty/
+│   │   │       │   ├── CartEmpty.tsx
+│   │   │       │   └── index.ts
+│   │   │       ├── CartItem/
+│   │   │       │   ├── CartItem.scss
+│   │   │       │   ├── CartItem.tsx
+│   │   │       │   └── index.ts
+│   │   │       ├── CartQuantity/
+│   │   │       │   ├── CartQuantity.scss
+│   │   │       │   ├── CartQuantity.tsx
+│   │   │       │   └── index.ts
+│   │   │       ├── CartSummary/
+│   │   │       │   ├── CartSummary.scss
+│   │   │       │   ├── CartSummary.tsx
+│   │   │       │   └── index.ts
+│   │   │       ├── CartToast/
+│   │   │       │   ├── CartToast.scss
+│   │   │       │   ├── CartToast.tsx
+│   │   │       │   └── index.ts
+│   │   │       ├── ProductCartActions/
+│   │   │       │   ├── index.ts
+│   │   │       │   └── ProductCartActions.tsx
+│   │   │       └── ProductCartPanel/
+│   │   │           ├── index.ts
+│   │   │           ├── ProductCartPanel.scss
+│   │   │           └── ProductCartPanel.tsx
+│   │   ├── catalog/
+│   │   │   ├── filters/
+│   │   │   │   ├── CategoriesFilter/
+│   │   │   │   │   ├── CategoriesFilter.scss
+│   │   │   │   │   ├── CategoriesFilter.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   ├── FilterSearch/
+│   │   │   │   │   ├── FilterSearch.scss
+│   │   │   │   │   ├── FilterSearch.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   ├── FilterSortBy/
+│   │   │   │   │   ├── FilterSortBy.scss
+│   │   │   │   │   ├── FilterSortBy.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   ├── PriceFilter/
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── PriceFilter.scss
+│   │   │   │   │   └── PriceFilter.tsx
+│   │   │   │   ├── SaleFilter/
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── SaleFilter.scss
+│   │   │   │   │   └── SaleFilter.tsx
+│   │   │   │   └── StockFilter/
+│   │   │   │       ├── index.ts
+│   │   │   │       ├── StockFilter.scss
+│   │   │   │       └── StockFilter.tsx
+│   │   │   ├── model/
+│   │   │   │   ├── catalog.types.ts
+│   │   │   │   └── useCatalog.ts
+│   │   │   ├── navigation/
+│   │   │   │   ├── CategoriesList/
+│   │   │   │   │   ├── CategoriesList.scss
+│   │   │   │   │   ├── CategoriesList.tsx
+│   │   │   │   │   └── index.ts
+│   │   │   │   └── CategoryMenu/
+│   │   │   │       ├── CategoryMenu.scss
+│   │   │   │       ├── CategoryMenu.tsx
+│   │   │   │       └── index.ts
+│   │   │   └── ui/
+│   │   │       ├── CatalogList/
+│   │   │       │   ├── CatalogList.scss
+│   │   │       │   ├── CatalogList.tsx
+│   │   │       │   └── index.ts
+│   │   │       └── CatalogPagination/
+│   │   │           ├── CatalogPagination.scss
+│   │   │           ├── CatalogPagination.tsx
+│   │   │           └── index.ts
+│   │   ├── checkout/
+│   │   │   ├── model/
+│   │   │   │   ├── checkout.types.ts
+│   │   │   │   └── checkoutData.ts
+│   │   │   ├── ui/
+│   │   │   │   └── CheckoutForm/
+│   │   │   │       ├── CheckoutForm.scss
+│   │   │   │       ├── CheckoutForm.tsx
+│   │   │   │       └── index.ts
+│   │   │   └── index.ts
+│   │   ├── favourites/
+│   │   │   ├── model/
+│   │   │   │   └── favouritesSlice.ts
+│   │   │   └── ui/
+│   │   │       ├── FavouriteButton/
+│   │   │       │   ├── FavouriteButton.scss
+│   │   │       │   ├── FavouriteButton.tsx
+│   │   │       │   └── index.ts
+│   │   │       ├── FavouritesEmpty/
+│   │   │       │   ├── FavouritesEmpty.tsx
+│   │   │       │   └── index.ts
+│   │   │       └── FavouritesItem/
+│   │   │           ├── FavouritesItem.tsx
+│   │   │           └── index.ts
+│   │   └── product-card/
+│   │       ├── ui/
+│   │       │   ├── ConnectedProductCard/
+│   │       │   │   ├── ConnectedProductCard.tsx
+│   │       │   │   └── index.ts
+│   │       │   └── QuickView/
+│   │       │       ├── index.ts
+│   │       │       ├── QuickView.scss
+│   │       │       └── QuickView.tsx
+│   │       └── index.ts
+│   ├── pages/
+│   │   ├── BlogPage/
+│   │   │   ├── BlogPage.scss
+│   │   │   ├── BlogPage.tsx
+│   │   │   └── index.ts
+│   │   ├── CartPage/
+│   │   │   ├── CartPage.scss
+│   │   │   ├── CartPage.tsx
+│   │   │   └── index.ts
+│   │   ├── CatalogPage/
+│   │   │   ├── CatalogPage.scss
+│   │   │   ├── CatalogPage.tsx
+│   │   │   └── index.ts
+│   │   ├── CheckoutPage/
+│   │   │   ├── CheckoutPage.scss
+│   │   │   ├── CheckoutPage.tsx
+│   │   │   └── index.ts
+│   │   ├── ContactsPage/
+│   │   │   ├── ContactsPage.scss
+│   │   │   ├── ContactsPage.tsx
+│   │   │   └── index.ts
+│   │   ├── FavouritesPage/
+│   │   │   ├── FavouritesPage.scss
+│   │   │   ├── FavouritesPage.tsx
+│   │   │   └── index.ts
+│   │   ├── HomePage/
+│   │   │   ├── HomePage.scss
+│   │   │   ├── HomePage.tsx
+│   │   │   └── index.ts
+│   │   ├── NotFoundPage/
+│   │   │   ├── index.ts
+│   │   │   ├── NotFoundPage.scss
+│   │   │   └── NotFoundPage.tsx
+│   │   └── SingleProductPage/
+│   │       ├── index.ts
+│   │       ├── SingleProductPage.scss
+│   │       └── SingleProductPage.tsx
+│   ├── shared/
+│   │   ├── config/
+│   │   │   ├── constants.ts
+│   │   │   ├── navigation.ts
+│   │   │   └── socialLinks.ts
+│   │   ├── lib/
+│   │   │   ├── formatDate.ts
+│   │   │   ├── formatPhone.ts
+│   │   │   ├── formatPrice.ts
+│   │   │   ├── getInitials.ts
+│   │   │   ├── index.ts
+│   │   │   ├── pluralize.ts
+│   │   │   └── theme.ts
+│   │   ├── styles/
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _reset.scss
+│   │   │   ├── _variables.scss
+│   │   │   └── main.scss
+│   │   └── ui/
+│   │       ├── Badge/
+│   │       │   ├── Badge.scss
+│   │       │   ├── Badge.tsx
+│   │       │   └── index.ts
+│   │       ├── Breadcrumbs/
+│   │       │   ├── Breadcrumbs.scss
+│   │       │   ├── Breadcrumbs.tsx
+│   │       │   └── index.ts
+│   │       ├── Button/
+│   │       │   ├── Button.scss
+│   │       │   ├── Button.tsx
+│   │       │   └── index.ts
+│   │       ├── Container/
+│   │       │   ├── Container.scss
+│   │       │   ├── Container.tsx
+│   │       │   └── index.ts
+│   │       ├── EmptyState/
+│   │       │   ├── EmptyState.scss
+│   │       │   ├── EmptyState.tsx
+│   │       │   └── index.ts
+│   │       ├── Icon/
+│   │       │   ├── Icon.scss
+│   │       │   ├── Icon.tsx
+│   │       │   └── index.ts
+│   │       ├── Input/
+│   │       │   ├── index.ts
+│   │       │   ├── Input.scss
+│   │       │   └── Input.tsx
+│   │       ├── Loader/
+│   │       │   ├── index.ts
+│   │       │   ├── Loader.scss
+│   │       │   └── Loader.tsx
+│   │       ├── Modal/
+│   │       │   ├── index.ts
+│   │       │   ├── Modal.scss
+│   │       │   └── Modal.tsx
+│   │       └── PageHero/
+│   │           ├── index.ts
+│   │           ├── PageHero.scss
+│   │           └── PageHero.tsx
+│   └── widgets/
+│       ├── Footer/
+│       │   ├── components/
+│       │   │   ├── FooterBottom/
+│       │   │   │   ├── FooterBottom.scss
+│       │   │   │   ├── FooterBottom.tsx
+│       │   │   │   └── index.ts
+│       │   │   ├── FooterSection/
+│       │   │   │   ├── FooterSection.scss
+│       │   │   │   ├── FooterSection.tsx
+│       │   │   │   └── index.ts
+│       │   │   └── FooterSocial/
+│       │   │       ├── FooterSocial.scss
+│       │   │       ├── FooterSocial.tsx
+│       │   │       └── index.ts
+│       │   ├── Footer.scss
+│       │   ├── Footer.tsx
+│       │   └── index.ts
+│       ├── Header/
+│       │   ├── components/
+│       │   │   ├── HeaderActions/
+│       │   │   │   ├── HeaderActions.scss
+│       │   │   │   ├── HeaderActions.tsx
+│       │   │   │   └── index.ts
+│       │   │   ├── HeaderLogo/
+│       │   │   │   ├── HeaderLogo.scss
+│       │   │   │   ├── HeaderLogo.tsx
+│       │   │   │   └── index.ts
+│       │   │   ├── HeaderNav/
+│       │   │   │   ├── HeaderNav.scss
+│       │   │   │   ├── HeaderNav.tsx
+│       │   │   │   └── index.ts
+│       │   │   └── MobileNav/
+│       │   │       ├── index.ts
+│       │   │       ├── MobileNav.scss
+│       │   │       └── MobileNav.tsx
+│       │   ├── Header.scss
+│       │   ├── Header.tsx
+│       │   └── index.ts
+│       ├── MainSlider/
+│       │   ├── components/
+│       │   │   └── SliderSlide/
+│       │   │       ├── index.ts
+│       │   │       ├── SliderSlide.scss
+│       │   │       └── SliderSlide.tsx
+│       │   ├── index.ts
+│       │   ├── MainSlider.scss
+│       │   ├── MainSlider.tsx
+│       │   └── MainSlider.types.ts
+│       ├── ProductGallery/
+│       │   ├── index.ts
+│       │   ├── ProductGallery.scss
+│       │   └── ProductGallery.tsx
+│       ├── ReviewsSection/
+│       │   ├── components/
+│       │   │   ├── ReviewAuthor/
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── ReviewAuthor.scss
+│       │   │   │   └── ReviewAuthor.tsx
+│       │   │   ├── ReviewCard/
+│       │   │   │   ├── index.ts
+│       │   │   │   ├── ReviewCard.scss
+│       │   │   │   └── ReviewCard.tsx
+│       │   │   └── ReviewRating/
+│       │   │       ├── index.ts
+│       │   │       ├── ReviewRating.scss
+│       │   │       └── ReviewRating.tsx
+│       │   ├── index.ts
+│       │   ├── ReviewsSection.scss
+│       │   └── ReviewsSection.tsx
+│       └── SaleSection/
+│           ├── index.ts
+│           ├── SaleSection.scss
+│           └── SaleSection.tsx
+├── .editorconfig
 ├── .gitignore
-├── CLAUDE.md
-├── README.md
+├── .prettierignore
+├── .prettierrc.json
+├── AGENTS.md
 ├── eslint.config.js
 ├── index.html
-├── package.json
 ├── package-lock.json
-├── tsconfig.json
+├── package.json
+├── progress.txt
+├── README.md
+├── structure.txt
+├── stylelint.config.mjs
 ├── tsconfig.app.json
+├── tsconfig.json
 ├── tsconfig.node.json
-├── vite.config.ts
-│
-├── public/
-│   ├── favicon.svg
-│   ├── icons.svg
-│   └── images/
-│       ├── logo.png
-│       └── home/
-│           ├── promo.png
-│           ├── slide1.jpg
-│           ├── slide2.jpg
-│           └── slide3.jpg
-│
-└── src/
-    │
-    ├── app/
-    │   ├── App.tsx
-    │   ├── main.tsx
-    │   │
-    │   ├── providers/
-    │   │   └── StoreProvider/
-    │   │       ├── StoreProvider.tsx
-    │   │       └── index.ts
-    │   │
-    │   ├── router/
-    │   │   ├── AppRouter.tsx
-    │   │   ├── routes.ts
-    │   │   └── index.ts
-    │   │
-    │   └── store/
-    │       ├── store.ts
-    │       └── index.ts
-    │
-    ├── pages/
-    │   ├── HomePage/
-    │   │   ├── HomePage.tsx
-    │   │   ├── HomePage.scss
-    │   │   └── index.ts
-    │   │
-    │   ├── CatalogPage/
-    │   │   ├── CatalogPage.tsx
-    │   │   ├── CatalogPage.scss
-    │   │   └── index.ts
-    │   │
-    │   ├── SingleProductPage/
-    │   │   ├── SingleProductPage.tsx
-    │   │   ├── SingleProductPage.scss
-    │   │   └── index.ts
-    │   │
-    │   ├── CartPage/
-    │   │   ├── CartPage.tsx
-    │   │   ├── CartPage.scss
-    │   │   └── index.ts
-    │   │
-    │   ├── FavouritesPage/
-    │   │   ├── FavouritesPage.tsx
-    │   │   ├── FavouritesPage.scss
-    │   │   └── index.ts
-    │   │
-    │   ├── ContactsPage/
-    │   │   ├── ContactsPage.tsx
-    │   │   ├── ContactsPage.scss
-    │   │   └── index.ts
-    │   │
-    │   ├── BlogPage/
-    │   │   ├── BlogPage.tsx
-    │   │   ├── BlogPage.scss
-    │   │   └── index.ts
-    │   │
-    │   └── NotFoundPage/
-    │       ├── NotFoundPage.tsx
-    │       ├── NotFoundPage.scss
-    │       └── index.ts
-    │
-    ├── widgets/
-    │   ├── Header/
-    │   │   ├── Header.tsx
-    │   │   ├── Header.scss
-    │   │   ├── index.ts
-    │   │   └── components/
-    │   │       ├── HeaderLogo/
-    │   │       │   ├── HeaderLogo.tsx
-    │   │       │   ├── HeaderLogo.scss
-    │   │       │   └── index.ts
-    │   │       ├── HeaderNav/
-    │   │       │   ├── HeaderNav.tsx
-    │   │       │   ├── HeaderNav.scss
-    │   │       │   └── index.ts
-    │   │       └── HeaderActions/
-    │   │           ├── HeaderActions.tsx
-    │   │           ├── HeaderActions.scss
-    │   │           └── index.ts
-    │   │
-    │   ├── Footer/
-    │   │   ├── Footer.tsx
-    │   │   ├── Footer.scss
-    │   │   ├── index.ts
-    │   │   └── components/
-    │   │       ├── FooterSection/
-    │   │       ├── FooterBottom/
-    │   │       └── FooterSocial/
-    │   │
-    │   ├── HomeSlider/
-    │   │   ├── HomeSlider.tsx
-    │   │   ├── HomeSlider.scss
-    │   │   ├── HomeSlider.types.ts
-    │   │   ├── index.ts
-    │   │   └── components/
-    │   │       ├── SliderSlide/
-    │   │       └── SliderSettings/
-    │   │
-    │   └── ReviewsSection/
-    │       ├── ReviewsSection.tsx
-    │       ├── ReviewsSection.scss
-    │       ├── index.ts
-    │       └── components/
-    │           ├── ReviewCard/
-    │           ├── ReviewAuthor/
-    │           └── ReviewRating/
-    │
-    ├── features/
-    │   ├── catalog/
-    │   │   ├── filters/
-    │   │   │   ├── CategoriesFilter/
-    │   │   │   ├── FilterSearch/
-    │   │   │   └── FilterSortBy/
-    │   │   └── navigation/
-    │   │       └── CategoriesNav/
-    │   │
-    │   ├── cart/
-    │   │   ├── model/
-    │   │   │   └── cartSlice.ts
-    │   │   └── ui/
-    │   │       ├── CartItem/
-    │   │       ├── CartQuantity/
-    │   │       ├── CartSummary/
-    │   │       └── CartEmpty/
-    │   │
-    │   └── favourites/
-    │       ├── model/
-    │       │   └── favouritesSlice.ts
-    │       └── ui/
-    │           ├── FavouritesItem/
-    │           └── FavouritesEmpty/
-    │
-    ├── entities/
-    │   ├── product/
-    │   │   ├── model/
-    │   │   │   ├── productsSlice.ts
-    │   │   │   ├── product.types.ts
-    │   │   │   └── productsData.ts
-    │   │   ├── ui/
-    │   │   │   └── ProductCard/
-    │   │   │       ├── ProductCard.tsx
-    │   │   │       ├── ProductCard.scss
-    │   │   │       └── index.ts
-    │   │   └── index.ts
-    │   │
-    │   ├── category/
-    │   │   ├── model/
-    │   │   │   └── category.types.ts
-    │   │   ├── ui/
-    │   │   │   └── CategoryItem/
-    │   │   └── index.ts
-    │   │
-    │   ├── review/
-    │   │   ├── model/
-    │   │   │   ├── review.types.ts
-    │   │   │   └── reviewsData.ts
-    │   │   └── index.ts
-    │   │
-    │   └── contact/
-    │       ├── model/
-    │       │   └── contact.types.ts
-    │       └── index.ts
-    │
-    └── shared/
-        ├── ui/
-        │   ├── Button/
-        │   ├── Input/
-        │   ├── Modal/
-        │   ├── Slider/
-        │   ├── Loader/
-        │   └── Icon/
-        │
-        ├── hooks/
-        │   ├── useAppDispatch.ts
-        │   ├── useAppSelector.ts
-        │   └── index.ts
-        │
-        ├── lib/
-        │   ├── formatDate.ts
-        │   ├── formatPrice.ts
-        │   ├── getInitials.ts
-        │   └── index.ts
-        │
-        ├── types/
-        │   └── common.types.ts
-        │
-        ├── config/
-        │   └── constants.ts
-        │
-        ├── assets/
-        │   └── images/
-        │
-        └── styles/
-            ├── _mixins.scss
-            ├── _reset.scss
-            ├── _variables.scss
-            └── main.scss
+└── vite.config.ts
