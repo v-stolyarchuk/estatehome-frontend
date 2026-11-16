@@ -1,0 +1,96 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.cart-toast {
+    /*** BASE ***/
+
+    position: fixed;
+    bottom: 1.25rem;
+    left: 50%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    max-width: min(92vw, 30rem);
+    padding: 0.75rem 0.9rem 0.75rem 1.1rem;
+
+    // Темний moss-dark у обох темах — контрастний фон для світлого тексту
+    background-color: $color-moss-dark;
+    border-radius: 999px;
+    box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 25%);
+    color: $color-on-accent;
+    font-size: 0.9rem;
+    animation: cart-toast-in 0.3s ease;
+    transform: translateX(-50%);
+
+    @keyframes cart-toast-in {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 1rem);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    /*** ELEMENTS ***/
+
+    &__icon {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: color-mix(in srgb, $color-success 30%, transparent);
+        border-radius: 50%;
+        color: $color-success;
+        font-size: 0.95rem;
+    }
+
+    &__text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__link {
+        display: inline-flex;
+        flex-shrink: 0;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.35rem 0.75rem;
+        background-color: $color-terracotta;
+        border-radius: 999px;
+        color: $color-on-accent;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: $color-terracotta-dark;
+        }
+    }
+
+    &__close {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 1.6rem;
+        height: 1.6rem;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: color-mix(in srgb, $color-on-accent 70%, transparent);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-on-accent;
+        }
+    }
+}

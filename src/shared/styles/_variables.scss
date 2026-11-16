@@ -29,6 +29,13 @@
 
     // Світлий текст/іконки на акцентних, темних і фото-фонах
     --color-on-accent: #fff;
+
+    // Футер — темна смуга в обох темах, власні токени для контрасту
+    --color-footer-bg: #1f4331;
+    --color-footer-text: #f5f2ea;
+    --color-footer-muted: #c3d4c8;
+    --color-footer-line: rgb(255 255 255 / 16%);
+    --color-footer-accent: #e5b95e;
 }
 
 :root[data-theme='dark'] {
@@ -68,3 +75,8 @@ $color-ink: var(--color-ink);
 $color-ink-soft: var(--color-ink-soft);
 $color-line: var(--color-line);
 $color-on-accent: var(--color-on-accent);
+$color-footer-bg: var(--color-footer-bg);
+$color-footer-text: var(--color-footer-text);
+$color-footer-muted: var(--color-footer-muted);
+$color-footer-line: var(--color-footer-line);
+$color-footer-accent: var(--color-footer-accent);

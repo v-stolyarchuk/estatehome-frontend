@@ -51,6 +51,14 @@
         margin-bottom: 1.5rem;
     }
 
+    &__options {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
     &__sort-group {
         display: flex;
         flex-wrap: wrap;

@@ -1,5 +1,6 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
 
+import { CartToast } from '../../features/cart/ui/CartToast'
 import { Container } from '../../shared/ui/Container'
 import { Footer } from '../../widgets/Footer'
 import { Header } from '../../widgets/Header'
@@ -19,6 +20,7 @@ export function AppRouter() {
                 </Routes>
             </Container>
             <Footer />
+            <CartToast />
         </HashRouter>
     )
 }

@@ -1,0 +1,34 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.price-filter {
+    /*** BASE ***/
+
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    /*** LABEL ***/
+
+    &__label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $color-ink;
+        white-space: nowrap;
+    }
+
+    /*** INPUTS ***/
+
+    &__inputs {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .input {
+            width: 6rem;
+        }
+    }
+
+    &__separator {
+        color: $color-ink-soft;
+    }
+}

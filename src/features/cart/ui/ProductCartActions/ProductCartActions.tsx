@@ -11,7 +11,7 @@ interface ProductCartActionsProps {
 export const ProductCartActions = ({ product }: ProductCartActionsProps) => {
     const dispatch = useAppDispatch()
     const cartItem = useAppSelector((state) =>
-        selectCartItems(state).find((item) => item.product.id === product.id),
+        selectCartItems(state).find((item) => item.id === product.id),
     )
 
     if (cartItem) {

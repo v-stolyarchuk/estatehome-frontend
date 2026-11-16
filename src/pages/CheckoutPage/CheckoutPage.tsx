@@ -5,7 +5,7 @@ import { FiCheck } from 'react-icons/fi'
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { getProductImageUrl } from '../../entities/product'
-import { clearCart, selectCartItems, selectCartTotal } from '../../features/cart/model/cartSlice'
+import { clearCart, selectCartProducts, selectCartTotal } from '../../features/cart/model/cartSlice'
 import { CartEmpty } from '../../features/cart/ui/CartEmpty'
 import type { CheckoutFormData } from '../../features/checkout'
 import { CheckoutForm, getDeliveryMethodLabel } from '../../features/checkout'
@@ -22,7 +22,7 @@ const generateOrderNumber = () => `EH-${Date.now().toString(36).toUpperCase()}`
 
 export const CheckoutPage = () => {
     const dispatch = useAppDispatch()
-    const items = useAppSelector(selectCartItems)
+    const items = useAppSelector(selectCartProducts)
     const total = useAppSelector(selectCartTotal)
     const [order, setOrder] = useState<PlacedOrder | null>(null)
 
@@ -120,7 +120,7 @@ export const CheckoutPage = () => {
                     <h2 className="checkout-summary__title">Ваше замовлення</h2>
                     <ul className="checkout-summary__list">
                         {items.map((item) => (
-                            <li key={item.product.id} className="checkout-summary__item">
+                            <li key={item.id} className="checkout-summary__item">
                                 <div className="checkout-summary__image">
                                     {item.product.images.length > 0 ? (
                                         <img

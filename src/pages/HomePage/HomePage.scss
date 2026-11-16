@@ -79,7 +79,12 @@
         gap: 1rem;
         padding: 3rem 1.5rem;
         text-align: center;
-        background: linear-gradient(135deg, $color-moss 0%, $color-terracotta 100%);
+        background: linear-gradient(
+            120deg,
+            $color-sale 0%,
+            $color-terracotta 55%,
+            $color-brass 100%
+        );
         border-radius: 1rem;
     }
 

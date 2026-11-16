@@ -9,7 +9,25 @@ const loadCartItems = (): CartItem[] => {
     try {
         const raw = localStorage.getItem(CART_STORAGE_KEY)
         const parsed: unknown = raw ? JSON.parse(raw) : []
-        return Array.isArray(parsed) ? (parsed as CartItem[]) : []
+        if (!Array.isArray(parsed)) {
+            return []
+        }
+        return parsed.flatMap((entry) => {
+            // Підтримка старого формату { product: { id }, quantity }
+            const record = entry as {
+                id?: unknown
+                product?: { id?: unknown }
+                quantity?: unknown
+            }
+            const id =
+                typeof record.id === 'string'
+                    ? record.id
+                    : typeof record.product?.id === 'string'
+                      ? record.product.id
+                      : null
+            const quantity = typeof record.quantity === 'number' ? record.quantity : 0
+            return id && quantity > 0 ? [{ id, quantity }] : []
+        })
     } catch {
         return []
     }
@@ -34,7 +52,7 @@ export const store = configureStore({
         favourites: favouritesReducer,
     },
     preloadedState: {
-        cart: { items: loadCartItems() },
+        cart: { items: loadCartItems(), toast: null },
         favourites: { ids: loadFavouriteIds() },
     },
 })

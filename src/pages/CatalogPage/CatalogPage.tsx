@@ -1,19 +1,16 @@
 import './CatalogPage.scss'
 
-import { useSearchParams } from 'react-router-dom'
-
 import { CategoriesFilter } from '../../features/catalog/filters/CategoriesFilter'
 import { FilterSearch } from '../../features/catalog/filters/FilterSearch'
 import { FilterSortBy } from '../../features/catalog/filters/FilterSortBy'
+import { PriceFilter } from '../../features/catalog/filters/PriceFilter'
+import { StockFilter } from '../../features/catalog/filters/StockFilter'
 import { useCatalog } from '../../features/catalog/model/useCatalog'
 import { CatalogList } from '../../features/catalog/ui/CatalogList'
 import { pluralize } from '../../shared/lib'
 import { Breadcrumbs } from '../../shared/ui/Breadcrumbs'
 
 export const CatalogPage = () => {
-    const [searchParams] = useSearchParams()
-    const categoryParam = searchParams.get('category')
-    const queryParam = searchParams.get('q')
     const {
         query,
         setQuery,
@@ -24,8 +21,13 @@ export const CatalogPage = () => {
         hasActiveFilters,
         sortBy,
         setSortBy,
+        minPrice,
+        maxPrice,
+        setPriceRange,
+        inStockOnly,
+        toggleInStockOnly,
         filteredProducts,
-    } = useCatalog(categoryParam ? [categoryParam] : [], queryParam ?? '')
+    } = useCatalog()
 
     return (
         <section className="catalog-page">
@@ -60,8 +62,13 @@ export const CatalogPage = () => {
                 onToggle={toggleCategory}
             />
 
+            <div className="catalog-page__options">
+                <PriceFilter minPrice={minPrice} maxPrice={maxPrice} onChange={setPriceRange} />
+                <StockFilter checked={inStockOnly} onChange={toggleInStockOnly} />
+            </div>
+
             <CatalogList
-                key={`${query}|${selectedCategories.join(',')}|${sortBy}`}
+                key={`${query}|${selectedCategories.join(',')}|${sortBy}|${minPrice}|${maxPrice}|${inStockOnly}`}
                 products={filteredProducts}
                 query={query}
             />

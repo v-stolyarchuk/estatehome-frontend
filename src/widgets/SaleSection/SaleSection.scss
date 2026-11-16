@@ -1,0 +1,42 @@
+@use '../../shared/styles/main' as *;
+
+.sale-section {
+    /*** BASE ***/
+
+    padding: 2rem 0;
+
+    /*** HEADER ***/
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $color-ink;
+    }
+
+    &__subtitle {
+        color: $color-ink-soft;
+        font-size: 0.9rem;
+    }
+
+    /*** GRID ***/
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @include onTablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include onDesktop {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

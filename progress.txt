@@ -71,3 +71,8 @@
 15.11 - Removed dead code: Maybe/WithId types, selectCategory, addProduct, setTheme export, shared/assets
 15.11 - Mobile header compact sizing, catalog reset wrap fix, no horizontal scroll at 320px
 15.11 - CategoriesList with icons on home page, catalog pagination, global smooth scroll-to-top on route change
+15.11 - Revived ReviewsSection widget on home page, add-to-cart toast notification
+15.11 - Footer contrast fix: dedicated footer tokens for dark/light themes
+15.11 - HomePage CTA gradient changed to warm sunset (sale-terracotta-brass)
+15.11 - Cart normalized to {id, quantity} with product resolution; quick-view modal on product cards; SaleSection widget on home page
+15.11 - Catalog filters fully URL-synced; added price range, in-stock filter, discount sort; ScrollToTop now pathname-only

@@ -5,6 +5,8 @@ import { CategoryMenu } from '../../features/catalog/navigation/CategoryMenu'
 import { Button } from '../../shared/ui/Button'
 import { PageHero } from '../../shared/ui/PageHero'
 import { MainSlider } from '../../widgets/MainSlider'
+import { ReviewsSection } from '../../widgets/ReviewsSection'
+import { SaleSection } from '../../widgets/SaleSection'
 
 const features = [
     {
@@ -46,6 +48,8 @@ export const HomePage = () => {
 
             <CategoryMenu />
 
+            <SaleSection />
+
             <section className="home-page__features">
                 {features.map(({ icon, title, text }) => (
                     <article key={title} className="home-page__feature">
@@ -55,6 +59,8 @@ export const HomePage = () => {
                     </article>
                 ))}
             </section>
+
+            <ReviewsSection />
 
             <section className="home-page__cta">
                 <h2 className="home-page__cta-title">Готові знайти щось для себе?</h2>

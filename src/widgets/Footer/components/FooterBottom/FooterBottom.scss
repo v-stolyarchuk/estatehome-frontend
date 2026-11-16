@@ -4,10 +4,10 @@
     /*** BASE ***/
 
     padding-top: 1.5rem;
-    border-top: 1px solid $color-brass;
+    border-top: 1px solid $color-footer-line;
 
     &__text {
         font-size: 0.85rem;
-        color: $color-sage;
+        color: $color-footer-muted;
     }
 }

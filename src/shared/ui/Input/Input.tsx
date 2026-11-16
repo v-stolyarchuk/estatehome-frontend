@@ -4,7 +4,7 @@ interface InputProps {
     value: string
     onChange: (value: string) => void
     placeholder?: string
-    type?: 'text' | 'search' | 'email' | 'tel'
+    type?: 'text' | 'search' | 'email' | 'tel' | 'number'
     ariaLabel?: string
 }
 

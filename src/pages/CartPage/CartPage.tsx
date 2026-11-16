@@ -1,7 +1,7 @@
 import './CartPage.scss'
 
 import { useAppSelector } from '../../app/hooks'
-import { selectCartCount, selectCartItems } from '../../features/cart/model/cartSlice'
+import { selectCartCount, selectCartProducts } from '../../features/cart/model/cartSlice'
 import { CartEmpty } from '../../features/cart/ui/CartEmpty'
 import { CartItem } from '../../features/cart/ui/CartItem'
 import { CartSummary } from '../../features/cart/ui/CartSummary'
@@ -9,7 +9,7 @@ import { pluralize } from '../../shared/lib'
 import { Breadcrumbs } from '../../shared/ui/Breadcrumbs'
 
 export const CartPage = () => {
-    const items = useAppSelector(selectCartItems)
+    const items = useAppSelector(selectCartProducts)
     const count = useAppSelector(selectCartCount)
 
     if (items.length === 0) {
@@ -28,7 +28,7 @@ export const CartPage = () => {
             <div className="cart-page__content">
                 <div className="cart-page__items">
                     {items.map((item) => (
-                        <CartItem key={item.product.id} item={item} />
+                        <CartItem key={item.id} item={item} />
                     ))}
                 </div>
                 <CartSummary />

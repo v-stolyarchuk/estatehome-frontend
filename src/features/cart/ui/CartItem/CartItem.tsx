@@ -6,12 +6,12 @@ import { useAppDispatch } from '../../../../app/hooks'
 import { getCategoryLabel } from '../../../../entities/category'
 import { getProductImageUrl } from '../../../../entities/product'
 import { formatPrice } from '../../../../shared/lib'
-import type { CartItem as CartItemType } from '../../model/cartSlice'
+import type { ResolvedCartItem } from '../../model/cartSlice'
 import { removeFromCart } from '../../model/cartSlice'
 import { CartQuantity } from '../CartQuantity'
 
 interface CartItemProps {
-    item: CartItemType
+    item: ResolvedCartItem
 }
 
 export const CartItem = ({ item }: CartItemProps) => {

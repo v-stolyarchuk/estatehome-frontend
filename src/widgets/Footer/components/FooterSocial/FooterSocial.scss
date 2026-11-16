@@ -7,7 +7,7 @@
         display: block;
         margin-bottom: 0.75rem;
         font-size: 1rem;
-        color: $color-on-accent;
+        color: $color-footer-text;
     }
 
     /*** LIST ***/
@@ -24,9 +24,9 @@
         justify-content: center;
         width: 2.25rem;
         height: 2.25rem;
-        border: 1px solid $color-brass;
+        border: 1px solid $color-footer-line;
         border-radius: 50%;
-        color: $color-sage;
+        color: $color-footer-muted;
         font-size: 1.05rem;
         text-decoration: none;
         transition:
@@ -35,8 +35,8 @@
             transform 0.2s ease;
 
         &:hover {
-            border-color: $color-on-accent;
-            color: $color-on-accent;
+            border-color: $color-footer-accent;
+            color: $color-footer-accent;
             transform: translateY(-2px);
         }
     }

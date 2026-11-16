@@ -1,0 +1,29 @@
+@use '../../../../shared/styles/main.scss' as *;
+
+.stock-filter {
+    /*** BASE ***/
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+
+    /*** CHECKBOX ***/
+
+    &__checkbox {
+        width: 1.1rem;
+        height: 1.1rem;
+        accent-color: $color-moss;
+        cursor: pointer;
+    }
+
+    /*** LABEL ***/
+
+    &__label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $color-ink;
+        white-space: nowrap;
+    }
+}
