@@ -7,6 +7,7 @@ import { getCategoryLabel } from '../../../../entities/category'
 import {
     getProductDiscountPercent,
     getProductImageUrl,
+    getProductIsNew,
     type Product,
     PRODUCT_AVAILABILITY_LABELS,
     PRODUCT_BADGE_LABELS,
@@ -25,6 +26,7 @@ export const QuickView = ({ product }: QuickViewProps) => {
     const [isOpen, setIsOpen] = useState(false)
     const [imageIndex, setImageIndex] = useState(0)
     const discount = getProductDiscountPercent(product)
+    const isNew = getProductIsNew(product) && !product.badges?.includes('new')
     const availabilityLabel =
         product.availability !== 'in-stock'
             ? PRODUCT_AVAILABILITY_LABELS[product.availability]
@@ -75,6 +77,11 @@ export const QuickView = ({ product }: QuickViewProps) => {
 
                     <div className="quick-view__info">
                         <div className="quick-view__badges">
+                            {isNew && (
+                                <span className="quick-view__badge quick-view__badge--new">
+                                    Новинка
+                                </span>
+                            )}
                             {discount !== null && (
                                 <span className="quick-view__badge quick-view__badge--discount">
                                     −{discount}%

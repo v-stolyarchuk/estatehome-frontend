@@ -12,10 +12,78 @@
         font-size: 0.9rem;
         opacity: 0.55;
         pointer-events: none;
+        z-index: 1;
     }
 
     .input {
         padding-left: 2.4rem;
         border-radius: 999px;
+    }
+
+    /*** SUGGESTIONS ***/
+
+    &__suggestions {
+        position: absolute;
+        top: calc(100% + 0.4rem);
+        right: 0;
+        left: 0;
+        z-index: 20;
+        max-height: 22rem;
+        margin: 0;
+        padding: 0.35rem;
+        overflow-y: auto;
+        list-style: none;
+        background-color: $color-surface;
+        border: 1px solid $color-line;
+        border-radius: 0.9rem;
+        box-shadow: 0 1rem 2.5rem rgb(0 0 0 / 14%);
+    }
+
+    &__suggestion {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        width: 100%;
+        padding: 0.5rem 0.65rem;
+        border: none;
+        border-radius: 0.6rem;
+        background: transparent;
+        color: $color-ink;
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+
+        &--active,
+        &:hover {
+            background-color: color-mix(in srgb, $color-moss 10%, transparent);
+        }
+    }
+
+    &__suggestion-image {
+        flex: 0 0 auto;
+        width: 2.5rem;
+        height: 2.5rem;
+        object-fit: contain;
+        background-color: $color-surface;
+        border: 1px solid $color-line;
+        border-radius: 0.45rem;
+    }
+
+    &__suggestion-title {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &__suggestion-price {
+        flex: 0 0 auto;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: $color-moss;
+        white-space: nowrap;
     }
 }

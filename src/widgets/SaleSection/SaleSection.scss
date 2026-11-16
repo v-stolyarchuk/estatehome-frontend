@@ -24,19 +24,182 @@
         font-size: 0.9rem;
     }
 
-    /*** GRID ***/
+    /*** SLIDER ***/
 
-    &__grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    &__slide {
+        height: 100%;
+        padding: 0 0.5rem;
 
-        @include onTablet {
-            grid-template-columns: repeat(2, 1fr);
+        .product-card {
+            height: 100%;
+        }
+    }
+
+    .slick-track {
+        display: flex !important;
+    }
+
+    .slick-slide {
+        height: auto !important;
+
+        > div {
+            height: 100%;
+        }
+    }
+
+    /*** SLICK ARROWS ***/
+
+    .slick-arrow {
+        // Позиціонування задаємо самі, щоб не залежати від slick-theme.css
+        position: absolute;
+        top: 50%;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        border: 1px solid $color-line;
+        border-radius: 50%;
+        background-color: $color-surface;
+        color: $color-ink-soft;
+        font-size: 0;
+        line-height: 0;
+        cursor: pointer;
+        box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 10%);
+        transform: translateY(-50%);
+        transition:
+            border-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        // Шеврон рамками — не залежить від шрифтів і гліфів
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-top: 2px solid currentcolor;
+            border-right: 2px solid currentcolor;
+            opacity: 1;
         }
 
-        @include onDesktop {
-            grid-template-columns: repeat(3, 1fr);
+        &:focus {
+            background-color: $color-surface;
+            color: $color-ink-soft;
+        }
+
+        &:hover {
+            border-color: $color-moss;
+            color: $color-moss;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        &:focus-visible {
+            outline: 2px solid $color-moss;
+            outline-offset: 2px;
+        }
+
+        @include onMobile {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+    }
+
+    .slick-prev {
+        left: -0.75rem;
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(-135deg);
+        }
+
+        @include onMobile {
+            left: -0.25rem;
+        }
+    }
+
+    .slick-next {
+        right: -0.75rem;
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        @include onMobile {
+            right: -0.25rem;
+        }
+    }
+
+    /*** SLICK DOTS ***/
+
+    .slick-dots {
+        position: static;
+        width: auto;
+        margin: 1rem 0 0;
+        padding: 0;
+        line-height: 0;
+        list-style: none;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            width: auto;
+            height: auto;
+            margin: 0 0.125rem;
+            padding: 0;
+            vertical-align: middle;
+
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                height: auto;
+                padding: 0.3rem;
+                border: none;
+                background: transparent;
+                font-size: 0;
+                line-height: 0;
+                cursor: pointer;
+
+                // Скидаємо крапку-символ зі slick-theme і малюємо власну
+                &::before {
+                    content: '';
+                    position: static;
+                    display: block;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    border-radius: 999px;
+                    background-color: $color-line;
+                    color: transparent;
+                    font-size: 0;
+                    line-height: 0;
+                    transition:
+                        width 0.25s ease,
+                        background-color 0.25s ease,
+                        opacity 0.25s ease;
+                }
+
+                &:hover::before {
+                    opacity: 0.8;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid $color-moss;
+                    outline-offset: 2px;
+                    border-radius: 999px;
+                }
+            }
+
+            &.slick-active button::before {
+                width: 1.4rem;
+                background-color: $color-moss;
+            }
         }
     }
 }

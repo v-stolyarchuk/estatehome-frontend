@@ -10,7 +10,7 @@ interface FilterSortByProps {
 const SORT_OPTIONS: { value: CatalogSort; label: string }[] = [
     { value: 'featured', label: 'За замовчуванням' },
     { value: 'newest', label: 'Спочатку нові' },
-    { value: 'discount', label: 'За зжкою' },
+    { value: 'discount', label: 'За знижкою' },
     { value: 'price-asc', label: 'Ціна: від дешевих' },
     { value: 'price-desc', label: 'Ціна: від дорогих' },
     { value: 'name-asc', label: 'Назва: А–Я' },

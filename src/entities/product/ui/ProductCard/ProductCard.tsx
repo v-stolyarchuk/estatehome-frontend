@@ -8,7 +8,11 @@ import { Button } from '../../../../shared/ui/Button'
 import { getCategoryLabel } from '../../../category'
 import { PRODUCT_AVAILABILITY_LABELS, PRODUCT_BADGE_LABELS } from '../../model/product.labels'
 import type { Product } from '../../model/product.types'
-import { getProductDiscountPercent, getProductImageUrl } from '../../model/product.utils'
+import {
+    getProductDiscountPercent,
+    getProductImageUrl,
+    getProductIsNew,
+} from '../../model/product.utils'
 
 interface ProductCardProps {
     product: Product
@@ -22,8 +26,9 @@ export const ProductCard = ({ product, imageOverlay, cartAction }: ProductCardPr
         ? PRODUCT_AVAILABILITY_LABELS[product.availability]
         : null
     const discountPercent = getProductDiscountPercent(product)
+    const isNew = getProductIsNew(product) && !product.badges?.includes('new')
     const hasBadges =
-        (product.badges?.length ?? 0) > 0 || showAvailability || discountPercent !== null
+        isNew || (product.badges?.length ?? 0) > 0 || showAvailability || discountPercent !== null
 
     return (
         <article className="product-card">
@@ -31,6 +36,11 @@ export const ProductCard = ({ product, imageOverlay, cartAction }: ProductCardPr
                 {imageOverlay}
                 {hasBadges && (
                     <div className="product-card__badges">
+                        {isNew && (
+                            <span className="product-card__badge product-card__badge--new">
+                                Новинка
+                            </span>
+                        )}
                         {discountPercent !== null && (
                             <span className="product-card__badge product-card__badge--discount">
                                 −{discountPercent}%

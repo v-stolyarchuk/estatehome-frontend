@@ -1,7 +1,11 @@
 export { PRODUCT_AVAILABILITY_LABELS, PRODUCT_BADGE_LABELS } from './model/product.labels'
 export type { Product } from './model/product.types'
 export type { ProductAttribute, ProductAvailability, ProductBadge } from './model/product.types'
-export { getProductDiscountPercent, getProductImageUrl } from './model/product.utils'
+export {
+    getProductDiscountPercent,
+    getProductImageUrl,
+    getProductIsNew,
+} from './model/product.utils'
 export { productsData } from './model/productsData'
 export { default as productsReducer } from './model/productsSlice'
 export { productsSlice, selectProducts } from './model/productsSlice'

@@ -3,6 +3,7 @@ import './CheckoutForm.scss'
 import type { FormEvent } from 'react'
 import { useState } from 'react'
 
+import { formatPhoneMask } from '../../../../shared/lib'
 import { Button } from '../../../../shared/ui/Button'
 import { Input } from '../../../../shared/ui/Input'
 import type { CheckoutFormData, DeliveryMethod } from '../../model/checkout.types'
@@ -24,7 +25,7 @@ const INITIAL_FORM: CheckoutFormData = {
     comment: '',
 }
 
-const PHONE_PATTERN = /^\+?[0-9 ()-]{7,20}$/
+const PHONE_DIGITS_LENGTH = 12
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const validate = (form: CheckoutFormData): FormErrors => {
@@ -33,7 +34,7 @@ const validate = (form: CheckoutFormData): FormErrors => {
     if (!form.fullName.trim()) {
         errors.fullName = 'Вкажіть прізвище та ім’я'
     }
-    if (!PHONE_PATTERN.test(form.phone.trim())) {
+    if (form.phone.replace(/\D/g, '').length !== PHONE_DIGITS_LENGTH) {
         errors.phone = 'Введіть коректний номер телефону'
     }
     if (form.email.trim() && !EMAIL_PATTERN.test(form.email.trim())) {
@@ -99,8 +100,8 @@ export const CheckoutForm = ({ onSubmit }: CheckoutFormProps) => {
                     <Input
                         type="tel"
                         value={form.phone}
-                        onChange={(value) => updateField('phone', value)}
-                        placeholder="+380 (__) ___-__-__"
+                        onChange={(value) => updateField('phone', formatPhoneMask(value))}
+                        placeholder="+380 (67) 123-45-67"
                         ariaLabel="Номер телефону"
                     />
                     {errors.phone && <span className="checkout-form__error">{errors.phone}</span>}

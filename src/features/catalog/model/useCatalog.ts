@@ -44,6 +44,7 @@ export const useCatalog = () => {
     const minPrice = parsePrice(searchParams.get('min'))
     const maxPrice = parsePrice(searchParams.get('max'))
     const inStockOnly = searchParams.get('stock') === '1'
+    const saleOnly = searchParams.get('sale') === '1'
 
     const categories = useMemo(() => CATEGORIES.map((category) => category.slug), [])
 
@@ -109,6 +110,15 @@ export const useCatalog = () => {
             }
         })
 
+    const toggleSaleOnly = () =>
+        updateParams((params) => {
+            if (params.get('sale') === '1') {
+                params.delete('sale')
+            } else {
+                params.set('sale', '1')
+            }
+        })
+
     const resetFilters = () => setSearchParams({}, { replace: true })
 
     const hasActiveFilters =
@@ -117,7 +127,8 @@ export const useCatalog = () => {
         sortBy !== 'featured' ||
         minPrice !== null ||
         maxPrice !== null ||
-        inStockOnly
+        inStockOnly ||
+        saleOnly
 
     const filteredProducts = useMemo(() => {
         const normalizedQuery = query.trim().toLowerCase()
@@ -139,14 +150,15 @@ export const useCatalog = () => {
                 (minPrice === null || product.price >= minPrice) &&
                 (maxPrice === null || product.price <= maxPrice)
             const matchesStock = !inStockOnly || product.availability === 'in-stock'
-            return matchesQuery && matchesCategory && matchesPrice && matchesStock
+            const matchesSale = !saleOnly || getProductDiscountPercent(product) !== null
+            return matchesQuery && matchesCategory && matchesPrice && matchesStock && matchesSale
         })
 
         if (sortBy === 'featured') {
             return filtered
         }
         return [...filtered].sort(SORT_OPTIONS[sortBy])
-    }, [products, query, selectedCategories, sortBy, minPrice, maxPrice, inStockOnly])
+    }, [products, query, selectedCategories, sortBy, minPrice, maxPrice, inStockOnly, saleOnly])
 
     return {
         query,
@@ -163,6 +175,8 @@ export const useCatalog = () => {
         setPriceRange,
         inStockOnly,
         toggleInStockOnly,
+        saleOnly,
+        toggleSaleOnly,
         filteredProducts,
     }
 }

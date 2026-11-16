@@ -1,4 +1,5 @@
 export { formatDate } from './formatDate'
+export { formatPhoneMask } from './formatPhone'
 export { formatPrice } from './formatPrice'
 export { getInitials } from './getInitials'
 export { pluralize } from './pluralize'

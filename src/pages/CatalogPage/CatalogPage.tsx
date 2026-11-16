@@ -1,9 +1,12 @@
 import './CatalogPage.scss'
 
+import { useAppSelector } from '../../app/hooks'
+import { selectProducts } from '../../entities/product'
 import { CategoriesFilter } from '../../features/catalog/filters/CategoriesFilter'
 import { FilterSearch } from '../../features/catalog/filters/FilterSearch'
 import { FilterSortBy } from '../../features/catalog/filters/FilterSortBy'
 import { PriceFilter } from '../../features/catalog/filters/PriceFilter'
+import { SaleFilter } from '../../features/catalog/filters/SaleFilter'
 import { StockFilter } from '../../features/catalog/filters/StockFilter'
 import { useCatalog } from '../../features/catalog/model/useCatalog'
 import { CatalogList } from '../../features/catalog/ui/CatalogList'
@@ -11,6 +14,7 @@ import { pluralize } from '../../shared/lib'
 import { Breadcrumbs } from '../../shared/ui/Breadcrumbs'
 
 export const CatalogPage = () => {
+    const allProducts = useAppSelector(selectProducts)
     const {
         query,
         setQuery,
@@ -26,6 +30,8 @@ export const CatalogPage = () => {
         setPriceRange,
         inStockOnly,
         toggleInStockOnly,
+        saleOnly,
+        toggleSaleOnly,
         filteredProducts,
     } = useCatalog()
 
@@ -41,7 +47,7 @@ export const CatalogPage = () => {
             </header>
 
             <div className="catalog-page__controls">
-                <FilterSearch value={query} onChange={setQuery} />
+                <FilterSearch value={query} onChange={setQuery} products={allProducts} />
                 <div className="catalog-page__sort-group">
                     <FilterSortBy value={sortBy} onChange={setSortBy} />
                     {hasActiveFilters && (
@@ -65,10 +71,11 @@ export const CatalogPage = () => {
             <div className="catalog-page__options">
                 <PriceFilter minPrice={minPrice} maxPrice={maxPrice} onChange={setPriceRange} />
                 <StockFilter checked={inStockOnly} onChange={toggleInStockOnly} />
+                <SaleFilter checked={saleOnly} onChange={toggleSaleOnly} />
             </div>
 
             <CatalogList
-                key={`${query}|${selectedCategories.join(',')}|${sortBy}|${minPrice}|${maxPrice}|${inStockOnly}`}
+                key={`${query}|${selectedCategories.join(',')}|${sortBy}|${minPrice}|${maxPrice}|${inStockOnly}|${saleOnly}`}
                 products={filteredProducts}
                 query={query}
             />
