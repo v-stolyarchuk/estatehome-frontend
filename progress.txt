@@ -84,3 +84,4 @@
 16.11 - Added press kit product (p-054) from dropt.in.ua with 9 images to hobby-sports
 16.11 - Added potato chopper product (p-055) from dropt.in.ua, 9 gallery images, home-kitchen
 16.11 - Added steam cleaner product (p-056) from dropt.in.ua, 3 images, home-kitchen
+16.11 - ProductGallery thumbs wrap to new rows instead of horizontal scroll
